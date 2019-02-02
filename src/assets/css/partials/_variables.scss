@@ -1,2 +1,22 @@
 // COLORS
-$primary: #fff;
+$light-primary: #fff;
+$light-secondary: transparentize($light-primary, .4);
+$light-tertiary: transparentize($light-primary, .5);
+$dark-primary: #0c1751;
+$dark-secondary: transparentize($dark-primary, .7);
+$dark-tertiary: transparentize($dark-primary, .9);
+
+// GRADIENTS
+//sass-lint:disable no-color-literals
+$bg: linear-gradient(45deg, $dark-primary 0%, #16266e 100%);
+$light: radial-gradient(circle, #fff 0%, #e6f0fa 100%);
+$dark-blue: radial-gradient(circle, #3174fa 0%, #1246c9 100%);
+//sass-lint:enable no-color-literals
+
+// FONTS
+$text-font: 'Ubuntu Mono', sans;
+$header-font: 'Work Sans', sans;
+
+// FONT SIZES
+$text-mobile: 16px;
+$text-tablet: 24px;
