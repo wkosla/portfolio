@@ -1,0 +1,5 @@
+rules:
+  # Mixins
+  mixins-before-declarations: 0
+  # Name Formats
+  class-name-format: 0
