@@ -13,6 +13,10 @@ $light: radial-gradient(circle, #fff 0%, #e6f0fa 100%);
 $dark-blue: radial-gradient(circle, #3174fa 0%, #1246c9 100%);
 //sass-lint:enable no-color-literals
 
+// SHADOWS
+$shadow-black: -20px 20px 70px 0 rgba(5, 14, 26, .5);
+$shadow-blue: 0 5px 20px 0 #2d6ef4; //sass-lint:disable-line no-color-literals
+
 // FONTS
 $text-font: 'Ubuntu Mono', sans;
 $header-font: 'Work Sans', sans;
