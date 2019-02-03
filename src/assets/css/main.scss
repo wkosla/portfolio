@@ -14,11 +14,16 @@ html {
 
 body {
   background: $bg;
+  background-attachment: fixed;
   color: $light-primary;
   font-family: $text-font;
   font-size: $text-mobile;
   text-align: center;
   text-rendering: optimizeLegibility;
+  @include tablet {
+    font-size: $text-tablet;
+    text-align: left;
+  }
 }
 
 h1,
@@ -33,6 +38,20 @@ h2 {
   min-height: 100vh;
   padding: 120px 25px;
 
+  @include tablet {
+    padding: 200px 90px 120px;
+  }
+
+  @include laptop {
+    margin: 0 auto;
+    padding: 200px 0 120px;
+    max-width: 780px;
+  }
+
+  @include desktop {
+    max-width: 870px;
+  }
+
   &--short {
     min-height: 0;
   }
@@ -40,6 +59,20 @@ h2 {
 
 .row__wrap {
   margin: auto;
+
+  @include tablet {
+    width: 100%;
+  }
+
+  @include laptop {
+    display: flex;
+  }
+
+  &--hiddenmobile {
+    @include mobile-only {
+      display: none;
+    }
+  }
 }
 
 .row__header {
@@ -56,10 +89,20 @@ h2 {
 
 .row__text {
   letter-spacing: 1px;
-  line-height: 2rem;
+  line-height: 2em;
 
   &:not(:last-child) {
     margin-bottom: 16px;
+  }
+
+  @include laptop {
+    margin-left: 90px;
+    max-width: 380px;
+  }
+
+  @include desktop {
+    margin-left: 120px;
+    max-width: 420px;
   }
 }
 
@@ -68,37 +111,108 @@ h2 {
 // **********************
 
 .nav {
-  align-items: center;
-  display: flex;
   height: 104px;
-  justify-content: space-between;
   padding: 0 25px;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 9999;
+
+  @include tablet {
+    height: 128px;
+    padding: 0 34px;
+  }
+
+  @include laptop {
+    padding: 0 42px;
+  }
+}
+
+.nav__wrap {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1050px;
+}
+
+.nav__logo-wrap {
+  align-items: center;
+  display: flex;
 }
 
 .nav__logo {
   width: 55px;
 }
 
+.nav__name {
+  display: none;
+
+  @include laptop {
+    color: $light-secondary;
+    display: initial;
+    font-family: $header-font;
+    font-size: 1rem;
+    letter-spacing: .125rem;
+    margin-left: 32px;
+  }
+}
+
 .nav__btn {
+  font-size: 1rem;
   font-weight: bold;
   letter-spacing: .25rem;
   text-transform: uppercase;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.nav__links {
+  @include mobile-only {
+    display: none;
+  }
+
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav__link {
+  color: $light-secondary;
+  float: left;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: .25rem;
+  text-transform: uppercase;
+
+  &:not(:last-child) {
+    margin-right: 32px;
+  }
 }
 
 // **********************
 // HERO
 // **********************
 
+.hero {
+  padding: 120px 25px;
+}
+
 .hero__header-wrap {
   line-height: 3rem;
   margin: auto;
+
+  @include tablet {
+    line-height: 4rem;
+    max-width: 740px;
+    text-align: center;
+  }
 }
 
 .hero__header {
-  font-size: 2rem;
+  font-size: 2em;
   margin-bottom: 16px;
 }
 
@@ -107,6 +221,9 @@ h2 {
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: .125rem;
+  @include tablet {
+    font-size: 2rem;
+  }
 }
 
 // **********************
@@ -123,22 +240,63 @@ h2 {
 
 .works {
   padding-bottom: 80px;
+
+  @include tablet {
+    padding-bottom: 40px;
+  }
+
+  @include laptop {
+    padding-bottom: 120px;
+    padding-right: 0;
+  }
+
+  @include desktop {
+    padding-bottom: 160px;
+    padding-top: 190px;
+  }
 }
 
 .works__header {
   margin-bottom: 60px;
+
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
+  @include laptop {
+    margin-top: 168px;
+  }
+
+  @include desktop {
+    margin-top: 163px;
+  }
 }
 
 .works__works {
   max-width: 350px;
+
+  @include tablet {
+    margin: auto;
+    max-width: 583px;
+  }
+
+  @include laptop {
+    margin-left: -60px;
+    margin-right: -80px;
+    max-width: 780px;
+  }
+
+  @include desktop {
+    max-width: none;
+  }
 }
 
 .works__work {
   float: right;
-  width: 64vw;
   height: 72vw;
-  max-width: 260px;
   max-height: 290px;
+  max-width: 260px;
+  width: 64vw;
 
   &:nth-child(2n + 1) {
     float: left;
@@ -146,6 +304,58 @@ h2 {
 
   &:not(:first-child) {
     margin-top: -6%;
+  }
+
+  @include tablet {
+    float: left;
+    max-height: 256px;
+    max-width: 231px;
+
+    &:nth-child(4n + 1) {
+      margin-left: 118px;
+    }
+
+    &:nth-child(2n + 1) {
+      margin-right: 3px;
+    }
+
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: -54px;
+    }
+
+    path {
+      stroke-width: 14;
+    }
+  }
+
+  @include laptop {
+    max-height: 333px;
+    max-width: 300px;
+
+    &:nth-child(4n + 1) {
+      margin-left: 160px;
+    }
+
+    &:nth-child(2n + 1) {
+      margin-right: 20px;
+    }
+  }
+
+  @include desktop {
+    max-height: 366px;
+    max-width: 330px;
+
+    &:nth-child(4n + 1) {
+      margin-left: 180px;
+    }
+
+    &:nth-child(2n + 1) {
+      margin-right: 30px;
+    }
   }
 }
 
@@ -155,6 +365,22 @@ h2 {
 
 .contact {
   padding: 0;
+
+  @include tablet {
+    padding: 120px 90px;
+  }
+
+  @include laptop {
+    padding: 120px 0;
+  }
+}
+
+.contact__header {
+  margin-bottom: 80px;
+
+  @include laptop {
+    margin-top: 80px;
+  }
 }
 
 .contact__form {
@@ -162,6 +388,19 @@ h2 {
   height: 100%;
   padding: 20px 20px 40px;
   width: 100%;
+
+  @include tablet {
+    border-radius: 50px;
+    box-shadow: $shadow-black;
+    margin: 0 88px;
+    padding: 80px 65px 40px;
+    width: auto;
+  }
+
+  @include laptop {
+    margin-right: 0;
+    max-width: 540px;
+  }
 }
 
 .contact__input {
@@ -194,10 +433,42 @@ h2 {
   justify-content: center;
   margin: 16px auto 83px;
   width: 56px;
+
+  @include tablet {
+    margin-right: 0;
+  }
+}
+
+.contact__social {
+  text-align: center;
 }
 
 .contact__icon {
   &:not(:last-child) {
     margin-right: 24px;
   }
+}
+
+// **********************
+// CONTACT
+// **********************
+
+.footer {
+  @include mobile-only {
+    display: none;
+  }
+
+  display: flex;
+  padding-bottom: 80px;
+}
+
+.footer__logo-wrap {
+  display: flex;
+  height: 186px;
+  margin: auto;
+  width: 168px;
+}
+
+.footer__logo {
+  margin: auto;
 }

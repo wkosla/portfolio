@@ -10,8 +10,20 @@
 </head>
 <body>
   <nav class="nav">
-    <svg class="nav__logo" viewBox="0 0 55 46" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="evenodd"><path d="M42 0L32 10v21l10-10V0zm-8.071 32l13.536 13.535 7.07-7.07L48.071 32l6.464-6.465-7.07-7.07L33.929 32z" fill-opacity=".6"/><path d="M26 0L16 10.001v20.074l8.465 8.465 7.07-7.07L26 25.931V0zM10 0L0 10.001v20.074l8.464 8.465 7.071-7.07L10 25.931V0z"/></g></svg>
-    <div class="nav__btn">Menu</div>
+    <div class="nav__wrap">
+      <div class="nav__logo-wrap">
+        <svg class="nav__logo" viewBox="0 0 55 46" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="evenodd"><path d="M42 0L32 10v21l10-10V0zm-8.071 32l13.536 13.535 7.07-7.07L48.071 32l6.464-6.465-7.07-7.07L33.929 32z" fill-opacity=".6"/><path d="M26 0L16 10.001v20.074l8.465 8.465 7.07-7.07L26 25.931V0zM10 0L0 10.001v20.074l8.464 8.465 7.071-7.07L10 25.931V0z"/></g></svg>
+        <span class="nav__name">
+          Wojciech Kośla
+        </span>
+      </div>    
+      <div class="nav__btn">Menu</div>
+      <ul class="nav__links">
+        <li class="nav__link">About</li>
+        <li class="nav__link">Works</li>
+        <li class="nav__link">Contact</li>
+      </ul>
+    </div>
   </nav>
 
   <section class="row hero">
@@ -23,22 +35,27 @@
 
   <section class="row about">
     <div class="row__wrap">
-      <p class="row__subheader">About:</p>
-      <h2 class="row__header">Myself.</h2>
-
-      <p class="row__text">
-        Hello World! I’m s self-taught front-end developer, living in Poznań, PL. Let me help you create website that will change your business. Or at least look dope on every screen and device.
-      </p>
-      <p class="row__text">
-        Catch me on GitHub or Linkedin. Or drop me a line using the contact form below.
-      </p>
+      <header>
+        <p class="row__subheader">About:</p>
+        <h2 class="row__header">Myself.</h2>
+      </header>
+      <article>
+        <p class="row__text">
+          Hello World! I’m s self-taught front-end developer, living in Poznań, PL. Let me help you create website that will change your business. Or at least look dope on every screen and device.
+        </p>
+        <p class="row__text">
+          Catch me on GitHub or Linkedin. Or drop me a line using the contact form below.
+        </p>
+      </article>
     </div>
   </section>
 
   <section class="row skills">
-    <div class="row__wrap">      
-      <p class="row__subheader">About:</p>
-      <h2 class="row__header">Skills.</h2>
+    <div class="row__wrap">
+      <header>
+        <p class="row__subheader">About:</p>
+        <h2 class="row__header">Skills.</h2>
+      </header>  
     </div>
   </section>
 
@@ -56,18 +73,27 @@
   </section>
   
   <section class="row row--short contact">
-    <form class="contact__form" spellcheck="false">
-      <input class="contact__input" type="text" placeholder="Name">
-      <input class="contact__input" type="email" placeholder="E-mail address">
-      <textarea class="contact__input">Message</textarea>
-      <button class="contact__btn"><img src="assets/img/icon-arrow@3x.svg" alt="Send message!"></button>
-      <div class="contact__social">
-        <svg class="contact__icon" width="34" height="33" viewBox="0 0 34 33" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h34v34H0z"/><path d="M16.999 0C7.612 0 0 7.574 0 16.919c0 7.473 4.87 13.815 11.627 16.052.85.155 1.16-.367 1.16-.815 0-.402-.015-1.466-.024-2.877C8.035 30.3 7.037 27.01 7.037 27.01c-.773-1.954-1.888-2.474-1.888-2.474-1.543-1.05.117-1.029.117-1.029 1.706.12 2.604 1.744 2.604 1.744 1.517 2.585 3.979 1.839 4.947 1.405.155-1.093.594-1.838 1.08-2.262-3.774-.426-7.744-1.878-7.744-8.36 0-1.848.663-3.357 1.75-4.54-.174-.429-.758-2.148.167-4.478 0 0 1.427-.454 4.675 1.735a16.335 16.335 0 0 1 4.256-.57 16.37 16.37 0 0 1 4.256.57c3.245-2.19 4.67-1.735 4.67-1.735.928 2.33.344 4.05.17 4.478 1.089 1.183 1.747 2.692 1.747 4.54 0 6.498-3.975 7.929-7.763 8.347.611.523 1.155 1.556 1.155 3.133 0 2.262-.021 4.086-.021 4.642 0 .452.307.978 1.17.813C29.133 30.729 34 24.39 34 16.919 34 7.574 26.388 0 16.999 0" fill-opacity=".2" fill="#0C1751"/></g></svg>
-        <svg class="contact__icon" width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M17 34C7.61 34 0 26.389 0 17S7.61 0 17 0s17 7.611 17 17-7.61 17-17 17zm8.5-9.89v-5.896c0-3.285-1.85-4.81-4.205-4.81-1.898 0-3.088 1.039-3.307 1.766v-1.664h-3.723c.048.884 0 10.604 0 10.604h3.723v-5.738c0-.32-.015-.638.08-.867.256-.637.806-1.3 1.795-1.3 1.292 0 1.88.981 1.88 2.418v5.487H25.5zM10.501 12.18c1.245 0 2.021-.813 2.021-1.84-.024-1.047-.776-1.839-1.998-1.839-1.223 0-2.024.794-2.024 1.842 0 1.026.778 1.837 1.977 1.837h.024zM8.93 24.11h3.313V13.506H8.93V24.11z" fill="#0C1751" fill-rule="evenodd" fill-opacity=".2"/></svg>
-        <svg class="contact__icon" width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M17 34C7.61 34 0 26.39 0 17 0 7.612 7.61 0 17 0c9.389 0 17 7.612 17 17 0 9.39-7.611 17-17 17zm8.529-21.453c-.626.278-1.3.465-2.006.55a3.494 3.494 0 0 0 1.535-1.933 6.954 6.954 0 0 1-2.219.847 3.493 3.493 0 0 0-5.952 3.187 9.918 9.918 0 0 1-7.202-3.65 3.492 3.492 0 0 0 1.081 4.665 3.493 3.493 0 0 1-1.583-.437v.043a3.494 3.494 0 0 0 2.804 3.426 3.418 3.418 0 0 1-.922.122c-.224 0-.444-.02-.656-.061a3.492 3.492 0 0 0 3.263 2.424 7.01 7.01 0 0 1-4.339 1.497c-.282 0-.56-.016-.833-.048a9.903 9.903 0 0 0 5.355 1.569c6.427 0 9.94-5.324 9.94-9.94a9.61 9.61 0 0 0-.01-.452 7.092 7.092 0 0 0 1.744-1.81z" fill="#0C1751" fill-rule="evenodd" fill-opacity=".2"/></svg>
-        <svg class="contact__icon" width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M17 34C7.611 34 0 26.39 0 17 0 7.612 7.611 0 17 0s17 7.612 17 17c0 9.39-7.611 17-17 17zm-4.101-19.878v2.542h1.757V25.5h3.295v-8.836h2.607l.195-2.542h-2.802v-1.985c0-.684.612-.929 1.296-.929.683 0 1.415.212 1.415.212l.44-2.604s-.934-.317-3.151-.317c-1.36 0-2.152.52-2.728 1.28-.548.72-.567 1.882-.567 2.634v1.709H12.9z" fill="#0C1751" fill-rule="evenodd" fill-opacity=".2"/></svg>
-      </div>
-    </form>
+    <div class="row__wrap row__wrap--hiddenmobile">
+      <h1 class="row__header contact__header">Contact.</h1>
+      <form class="contact__form" spellcheck="false">
+        <input class="contact__input" type="text" placeholder="Name">
+        <input class="contact__input" type="email" placeholder="E-mail address">
+        <textarea class="contact__input">Message</textarea>
+        <button class="contact__btn"><img src="assets/img/icon-arrow@3x.svg" alt="Send message!"></button>
+        <div class="contact__social">
+          <svg class="contact__icon" width="34" height="33" viewBox="0 0 34 33" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h34v34H0z"/><path d="M16.999 0C7.612 0 0 7.574 0 16.919c0 7.473 4.87 13.815 11.627 16.052.85.155 1.16-.367 1.16-.815 0-.402-.015-1.466-.024-2.877C8.035 30.3 7.037 27.01 7.037 27.01c-.773-1.954-1.888-2.474-1.888-2.474-1.543-1.05.117-1.029.117-1.029 1.706.12 2.604 1.744 2.604 1.744 1.517 2.585 3.979 1.839 4.947 1.405.155-1.093.594-1.838 1.08-2.262-3.774-.426-7.744-1.878-7.744-8.36 0-1.848.663-3.357 1.75-4.54-.174-.429-.758-2.148.167-4.478 0 0 1.427-.454 4.675 1.735a16.335 16.335 0 0 1 4.256-.57 16.37 16.37 0 0 1 4.256.57c3.245-2.19 4.67-1.735 4.67-1.735.928 2.33.344 4.05.17 4.478 1.089 1.183 1.747 2.692 1.747 4.54 0 6.498-3.975 7.929-7.763 8.347.611.523 1.155 1.556 1.155 3.133 0 2.262-.021 4.086-.021 4.642 0 .452.307.978 1.17.813C29.133 30.729 34 24.39 34 16.919 34 7.574 26.388 0 16.999 0" fill-opacity=".2" fill="#0C1751"/></g></svg>
+          <svg class="contact__icon" width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M17 34C7.61 34 0 26.389 0 17S7.61 0 17 0s17 7.611 17 17-7.61 17-17 17zm8.5-9.89v-5.896c0-3.285-1.85-4.81-4.205-4.81-1.898 0-3.088 1.039-3.307 1.766v-1.664h-3.723c.048.884 0 10.604 0 10.604h3.723v-5.738c0-.32-.015-.638.08-.867.256-.637.806-1.3 1.795-1.3 1.292 0 1.88.981 1.88 2.418v5.487H25.5zM10.501 12.18c1.245 0 2.021-.813 2.021-1.84-.024-1.047-.776-1.839-1.998-1.839-1.223 0-2.024.794-2.024 1.842 0 1.026.778 1.837 1.977 1.837h.024zM8.93 24.11h3.313V13.506H8.93V24.11z" fill="#0C1751" fill-rule="evenodd" fill-opacity=".2"/></svg>
+          <svg class="contact__icon" width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M17 34C7.61 34 0 26.39 0 17 0 7.612 7.61 0 17 0c9.389 0 17 7.612 17 17 0 9.39-7.611 17-17 17zm8.529-21.453c-.626.278-1.3.465-2.006.55a3.494 3.494 0 0 0 1.535-1.933 6.954 6.954 0 0 1-2.219.847 3.493 3.493 0 0 0-5.952 3.187 9.918 9.918 0 0 1-7.202-3.65 3.492 3.492 0 0 0 1.081 4.665 3.493 3.493 0 0 1-1.583-.437v.043a3.494 3.494 0 0 0 2.804 3.426 3.418 3.418 0 0 1-.922.122c-.224 0-.444-.02-.656-.061a3.492 3.492 0 0 0 3.263 2.424 7.01 7.01 0 0 1-4.339 1.497c-.282 0-.56-.016-.833-.048a9.903 9.903 0 0 0 5.355 1.569c6.427 0 9.94-5.324 9.94-9.94a9.61 9.61 0 0 0-.01-.452 7.092 7.092 0 0 0 1.744-1.81z" fill="#0C1751" fill-rule="evenodd" fill-opacity=".2"/></svg>
+          <svg class="contact__icon" width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M17 34C7.611 34 0 26.39 0 17 0 7.612 7.611 0 17 0s17 7.612 17 17c0 9.39-7.611 17-17 17zm-4.101-19.878v2.542h1.757V25.5h3.295v-8.836h2.607l.195-2.542h-2.802v-1.985c0-.684.612-.929 1.296-.929.683 0 1.415.212 1.415.212l.44-2.604s-.934-.317-3.151-.317c-1.36 0-2.152.52-2.728 1.28-.548.72-.567 1.882-.567 2.634v1.709H12.9z" fill="#0C1751" fill-rule="evenodd" fill-opacity=".2"/></svg>
+        </div>
+      </form>
+    </div>
   </section>
+
+  <footer class="footer">
+    <div class="footer__logo-wrap">
+      <img class="footer__logo" src="assets/img/wk-logo@3x.svg" alt="Wojciech Kosla">
+    </div>
+  </footer>
 </body>
 </html>
