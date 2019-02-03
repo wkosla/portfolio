@@ -44,8 +44,8 @@ h2 {
 
   @include laptop {
     margin: 0 auto;
-    padding: 200px 0 120px;
     max-width: 780px;
+    padding: 200px 0 120px;
   }
 
   @include desktop {
