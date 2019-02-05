@@ -32,6 +32,11 @@ h2 {
   font-weight: 900;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -39,13 +44,13 @@ h2 {
   padding: 120px 25px;
 
   @include tablet {
-    padding: 200px 90px 120px;
+    padding: 190px 90px 120px;
   }
 
   @include laptop {
     margin: 0 auto;
     max-width: 780px;
-    padding: 200px 0 120px;
+    padding: 190px 0 120px;
   }
 
   @include desktop {
@@ -67,18 +72,18 @@ h2 {
   @include laptop {
     display: flex;
   }
-
-  &--hiddenmobile {
-    @include mobile-only {
-      display: none;
-    }
-  }
 }
 
 .row__header {
   font-size: 2.5rem;
   line-height: 2rem;
   margin-bottom: 40px;
+
+  &--nomobile {
+    @include mobile-only {
+      display: none;
+    }
+  }
 }
 
 .row__subheader {
@@ -186,9 +191,14 @@ h2 {
   font-weight: bold;
   letter-spacing: .25rem;
   text-transform: uppercase;
+  transition: .2s;
 
   &:not(:last-child) {
     margin-right: 32px;
+  }
+
+  &:hover {
+    color: $light-primary;
   }
 }
 
@@ -367,11 +377,11 @@ h2 {
   padding: 0;
 
   @include tablet {
-    padding: 120px 90px;
+    padding: 190px 90px;
   }
 
   @include laptop {
-    padding: 120px 0;
+    padding: 190px 0;
   }
 }
 
@@ -446,6 +456,16 @@ h2 {
 .contact__icon {
   &:not(:last-child) {
     margin-right: 24px;
+  }
+
+  path {
+    transition: .2s;
+  }
+
+  &:hover {
+    path {
+      fill-opacity: 1;
+    }
   }
 }
 
