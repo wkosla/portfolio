@@ -9,9 +9,22 @@ $dark-tertiary: transparentize($dark-primary, .9);
 // GRADIENTS
 //sass-lint:disable no-color-literals
 $bg: linear-gradient(45deg, $dark-primary 0%, #16266e 100%);
-$light: radial-gradient(circle, #fff 0%, #e6f0fa 100%);
-$dark-blue: radial-gradient(circle, #3174fa 0%, #1246c9 100%);
+$light: radial-gradient(circle at 75% 25%, #fff 0%, #e6f0fa 100%);
+$dark-blue: radial-gradient(circle at 75% 25%, #3174fa 0%, #1246c9 100%);
+$light-blue: radial-gradient(circle at 75% 25%, #00e1ff 0%, #008cff 100%);
+$aqua: radial-gradient(circle at 75% 25%, #7dffdc 0%, #08aac7 100%);
+$green: radial-gradient(circle at 75% 25%, #bdff16 0%, #59a52b 100%);
+$yellow: radial-gradient(circle at 75% 25%, #ffdf00 0%, #ff9100 100%);
+$orange: radial-gradient(circle at 75% 25%, #ffa700 0%, #ff4200 100%);
+$red: radial-gradient(circle at 75% 25%, #ff0051 0%, #940000 100%);
+$magenta: radial-gradient(circle at 75% 25%, #f3008c 0%, #8a003e 100%);
+$pink: radial-gradient(circle at 75% 25%, #ff33e4 0%, #ad005c 100%);
+$purple: radial-gradient(circle at 75% 25%, #cb00cb 0%, #6711a5 100%);
+$dark-purple: radial-gradient(circle at 75% 25%, #9e4cf1 0%, #4d00d4 100%);
 //sass-lint:enable no-color-literals
+
+// ORBS
+$orbs: light $light, darkblue $dark-blue, lightblue $light-blue, aqua $aqua, green $green, yellow $yellow, orange $orange, red $red, magenta $magenta, pink $pink, purple $purple, darkpurple $dark-purple;
 
 // SHADOWS
 $shadow-black: -20px 20px 70px 0 rgba(5, 14, 26, .5);
