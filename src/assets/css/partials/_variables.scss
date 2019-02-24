@@ -24,7 +24,7 @@ $dark-purple: radial-gradient(circle at 75% 25%, #9e4cf1 0%, #4d00d4 100%);
 //sass-lint:enable no-color-literals
 
 // ORBS
-$orbs: light $light, darkblue $dark-blue, lightblue $light-blue, aqua $aqua, green $green, yellow $yellow, orange $orange, red $red, magenta $magenta, pink $pink, purple $purple, darkpurple $dark-purple;
+$orbs: light $light, darkblue $dark-blue, lightblue $light-blue, aqua $aqua, green $green, yellow $yellow, orange $orange, red $red, magenta $magenta, pink $pink, purple $purple, darkpurple $dark-purple; //sass-lint:disable-line no-color-keywords
 
 // SHADOWS
 $shadow-black: -20px 20px 70px 0 rgba(5, 14, 26, .5);
