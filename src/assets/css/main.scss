@@ -129,6 +129,7 @@ a {
   border-radius: 50%;
   box-shadow: $shadow-black;
   position: absolute;
+  z-index: 9999;
 
   &::after {
     content: '';
@@ -137,7 +138,7 @@ a {
     width: 100%;
   }
 
-  &--nomobile {    
+  &--nomobile {
     @include mobile-only {
       display: none;
     }
@@ -253,7 +254,6 @@ a {
   }
 
   @include laptop {
-    // padding: 384px 0 500px;
     padding: 120px 0;
   }
 }
@@ -401,6 +401,10 @@ a {
 
   @include laptop {
     padding: 290px 0 240px;
+  }
+
+  @include desktop {
+    padding: 150px 0;
   }
 }
 
