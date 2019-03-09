@@ -488,6 +488,44 @@ a {
 // SKILLS
 // **********************
 
+.skills__header {
+  @include tablet {
+    margin-bottom: 0;
+  }
+}
+
+.skills__orbs {
+  height: 890px;
+  position: relative;
+  width: calc(100vw - 50px);
+  @include tablet {
+    height: 680px;
+    left: -90px;
+    top: -80px;
+    width: 100vw;
+  }
+  @include laptop {
+    height: 1000px;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.skills__svg {
+  height: 100%;
+  left: 50%;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 320px;
+  z-index: 9999;
+  @include tablet {
+    width: 768px;
+  }
+}
+
 // **********************
 // WORKS
 // **********************
