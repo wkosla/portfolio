@@ -44,6 +44,12 @@ a {
   text-decoration: none;
 }
 
+.svg__defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -149,6 +155,11 @@ a {
   .row__orb--#{nth($orb, 1)} {
     background: nth($orb, 2);
   }
+}
+
+.row__bg {
+  position: absolute;
+  z-index: -1;
 }
 
 // **********************
@@ -387,6 +398,16 @@ a {
   }
 }
 
+.hero__bg {
+  @include mobile-only {
+    display: none;
+  }
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 453px;
+}
+
 // **********************
 // ABOUT
 // **********************
@@ -420,7 +441,7 @@ a {
     }
 
     @include laptop {
-      right: -43px;
+      right: -73px;
       top: -133px;
     }
 
@@ -434,7 +455,7 @@ a {
 
     @include laptop {
       display: unset;
-      right: 0;
+      right: -30px;
       top: -80px;
       width: 112px;
     }
@@ -484,6 +505,55 @@ a {
   }
 }
 
+.about__bg {
+  width: 200px;
+
+  &--one {
+    right: 0;
+    top: -80px;
+
+    @include tablet {
+      right: -58px;
+      top: 16px;
+      width: 280px;
+
+      path {
+        @include tablet {
+          stroke-width: 2.5;
+        }
+      }
+    }
+
+    @include laptop {
+      right: -140px;
+      top: -80px;
+    }
+  }
+
+  &--two {
+    bottom: calc(-48px - 219px);
+    right: 0;
+
+    @include tablet {
+      bottom: calc(-40px - 350px);
+      right: 167px;
+      width: 320px;
+
+      path {
+        @include tablet {
+          stroke-width: 2;
+        }
+      }
+    }
+
+    @include laptop {
+      bottom: -50px;
+      left: 95px;
+      right: auto;
+    }
+  }
+}
+
 // **********************
 // SKILLS
 // **********************
@@ -523,6 +593,64 @@ a {
   z-index: 9999;
   @include tablet {
     width: 768px;
+  }
+}
+
+.skills__bg {
+  @include mobile-only {
+    display: none;
+  }
+
+  &--one {
+    left: -145px;
+    top: 238px;
+    width: 336px;
+
+    @include laptop {
+      left: -2px;
+      top: 286px;
+    }
+
+    path {
+      stroke-width: 2;
+    }
+  }
+
+  &--two {
+    right: -145px;
+    top: 142px;
+    width: 280px;
+
+    @include laptop {
+      right: -85px;
+      top: 190px;
+    }
+
+    path {
+      stroke-width: 3;
+    }
+  }
+
+  &--three {
+    left: 143px;
+    top: 78px;
+    width: 240px;
+
+    @include laptop {
+      left: 287px;
+      top: 126px;
+    }
+  }
+
+  &--four {
+    left: 255px;
+    top: 446px;
+    width: 240px;
+
+    @include laptop {
+      left: 390px;
+      top: 494px;
+    }
   }
 }
 
@@ -705,6 +833,42 @@ a {
   }
 }
 
+.works__bg {
+  display: none;
+
+  @include laptop {
+    display: unset;
+  }
+
+  &--one {
+    left: -5px;
+    top: 423px;
+    width: 168px;
+  }
+
+  &--two {
+    right: -82px;
+    top: 421px;
+    width: 336px;
+
+    path {
+      stroke-width: 2;
+    }
+  }
+
+  &--three {
+    left: 153px;
+    top: 155px;
+    width: 240px;
+  }
+
+  &--four {
+    bottom: -82px;
+    left: 111px;
+    width: 240px;
+  }
+}
+
 // **********************
 // CONTACT
 // **********************
@@ -717,7 +881,7 @@ a {
   }
 
   @include laptop {
-    padding: 190px 0;
+    padding: 190px 0 125px;
   }
 }
 
@@ -774,6 +938,10 @@ a {
 
   &::placeholder {
     color: $dark-secondary;
+  }
+
+  &--textarea {
+    height: 80px;
   }
 }
 
@@ -851,6 +1019,36 @@ a {
   }
 }
 
+.contact__bg {
+  display: none;
+
+  @include laptop {
+    display: unset;
+  }
+
+  &--one {
+    left: 64px;
+    top: 324px;
+    width: 336px;
+
+    path {
+      stroke-width: 2;
+    }
+  }
+
+  &--two {
+    left: 77px;
+    top: 30px;
+    width: 160px;
+  }
+
+  &--three {
+    left: 672px;
+    top: 134px;
+    width: 240px;
+  }
+}
+
 // **********************
 // FOOTER
 // **********************
@@ -868,9 +1066,21 @@ a {
   display: flex;
   height: 186px;
   margin: auto;
+  position: relative;
   width: 168px;
 }
 
 .footer__logo {
   margin: auto;
+}
+
+.footer__bg {
+  @include mobile-only {
+    display: none;
+  }
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 168px;
 }
