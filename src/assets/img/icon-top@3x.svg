@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-top@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="1.11806441%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#E6F0FA" stop-opacity="0.3" offset="0%"></stop>
+            <stop stop-color="#E6F0FA" stop-opacity="0.05" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="00-style-guide" transform="translate(-1425.000000, -1975.000000)">
+            <g id="colors" transform="translate(200.000000, 1315.000000)">
+                <g id="icon-top" transform="translate(1209.000000, 644.000000)">
+                    <polygon id="space" points="0 0 96 0 96 96 0 96"></polygon>
+                    <path d="M77.1715729,48 L48,18.8284271 L18.8284271,48 L21.6412655,50.8128384 L46,26.4976795 L46,78 L50,78 L50,26.4976795 L74.3587345,50.8128384 L77.1715729,48 Z" id="icon" stroke="url(#linearGradient-1)" stroke-width="4" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
