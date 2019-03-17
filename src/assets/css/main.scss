@@ -589,17 +589,18 @@ a {
   }
 }
 
-.skills__svg {
+.skills__canvas {
   height: 100%;
   left: 50%;
   overflow: visible;
   position: absolute;
-  top: 0;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 320px;
   z-index: 9999;
   @include tablet {
-    width: 768px;
+    height: 1500px;
+    width: 2000px;
   }
 }
 

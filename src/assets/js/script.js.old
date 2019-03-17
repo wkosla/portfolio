@@ -1,12 +1,9 @@
-const width = 2000,
-  height = 1500,
-  canvas = d3.select('.skills__canvas').attr('width', width).attr('height', height),
-  context = canvas.node().getContext('2d'),
+const svg = d3.select('.skills__svg'),
   data = [],
   forces = [],
   orbs = [{
     label: 'Sass', // SASS
-    colors: ['#cb00cb', '#6711a5'],
+    background: 'grad-purple',
     radius: {
       xs: 132,
       sm: 132,
@@ -15,12 +12,12 @@ const width = 2000,
     position: {
       xs: [500, 150],
       sm: [1000, 150],
-      md: [1200 + 1000, 80 + 620]
+      md: [1000, 80]
     }
   },
   {
     label: '',
-    colors: ['#fff', '#e6f0fa'],
+    background: 'grad-light',
     radius: {
       xs: 108,
       sm: 108,
@@ -29,12 +26,12 @@ const width = 2000,
     position: {
       xs: [300, 220],
       sm: [800, 220],
-      md: [1200 + 750, 200 + 620]
+      md: [750, 200]
     }
   },
   {
-    label: 'Gulp', //Gulp
-    colors: ['#ff0051', '#940000'],
+    label: 'jQuery', //JQUERY
+    background: 'grad-darkpurple',
     radius: {
       xs: 132,
       sm: 132,
@@ -43,12 +40,12 @@ const width = 2000,
     position: {
       xs: [80, 560],
       sm: [550, 550],
-      md: [1200 + 420, 650 + 620]
+      md: [420, 650]
     }
   },
   {
     label: '',
-    colors: ['#fff', '#e6f0fa'],
+    background: 'grad-light',
     radius: {
       xs: 192,
       sm: 192,
@@ -57,12 +54,12 @@ const width = 2000,
     position: {
       xs: [580, 670],
       sm: [1060, 670],
-      md: [1200 + 1100, 800 + 620]
+      md: [1100, 800]
     }
   },
   {
     label: 'GIT', // GIT
-    colors: ['#f3008c', '#8a003e'],
+    background: 'grad-red',
     radius: {
       xs: 132,
       sm: 132,
@@ -71,12 +68,12 @@ const width = 2000,
     position: {
       xs: [350, 1640],
       sm: [1350, 900],
-      md: [1200 + 1500, 1100 + 620]
+      md: [1500, 1100]
     }
   },
   {
     label: 'HTML5', // HTML5
-    colors: ['#ffa700', '#ff4200'],
+    background: 'grad-orange',
     radius: {
       xs: 108,
       sm: 108,
@@ -85,12 +82,12 @@ const width = 2000,
     position: {
       xs: [510, 950],
       sm: [1220, 750],
-      md: [1200 + 1300, 900 + 620]
+      md: [1300, 900]
     }
   },
   {
     label: '',
-    colors: ['#fff', '#e6f0fa'],
+    background: 'grad-light',
     radius: {
       xs: 120,
       sm: 120,
@@ -99,12 +96,12 @@ const width = 2000,
     position: {
       xs: [430, 790],
       sm: [920, 800],
-      md: [1200 + 900, 950 + 620]
+      md: [900, 950]
     }
   },
   {
     label: 'JS', // JAVASCRIPT
-    colors: ['#ffdf00', '#ff9100'],
+    background: 'grad-yellow',
     radius: {
       xs: 216,
       sm: 216,
@@ -113,12 +110,12 @@ const width = 2000,
     position: {
       xs: [370, 500],
       sm: [850, 500],
-      md: [1200 + 830, 560 + 620]
+      md: [830, 560]
     }
   },
   {
     label: '',
-    colors: ['#fff', '#e6f0fa'],
+    background: 'grad-light',
     radius: {
       xs: 144,
       sm: 144,
@@ -127,12 +124,12 @@ const width = 2000,
     position: {
       xs: [-20, 920],
       sm: [450, 900],
-      md: [1200 + 250, 1100 + 620]
+      md: [250, 1100]
     }
   },
   {
     label: 'Vue', // VUE
-    colors: ['#bdff16', '#59a52b'],
+    background: 'grad-green',
     radius: {
       xs: 192,
       sm: 192,
@@ -141,12 +138,12 @@ const width = 2000,
     position: {
       xs: [170, 1150],
       sm: [650, 1120],
-      md: [1200 + 500, 1400 + 620]
+      md: [500, 1400]
     }
   },
   {
-    label: 'Webpack', // WHEBPACK
-    colors: ['#3174fa', '#1246c9'],
+    label: 'PS', // PHOTOSHOP
+    background: 'grad-darkblue',
     radius: {
       xs: 108,
       sm: 108,
@@ -155,12 +152,12 @@ const width = 2000,
     position: {
       xs: [570, 1250],
       sm: [150, 1000],
-      md: [1200 + -200, 1300 + 620]
+      md: [-200, 1300]
     }
   },
   {
     label: '',
-    colors: ['#fff', '#e6f0fa'],
+    background: 'grad-light',
     radius: {
       xs: 132,
       sm: 132,
@@ -169,12 +166,12 @@ const width = 2000,
     position: {
       xs: [450, 1420],
       sm: [1450, 400],
-      md: [1200 + 1600, 400 + 620]
+      md: [1600, 400]
     }
   },
   {
     label: '',
-    colors: ['#fff', '#e6f0fa'],
+    background: 'grad-light',
     radius: {
       xs: 0,
       sm: 0,
@@ -183,12 +180,12 @@ const width = 2000,
     position: {
       xs: [0, 0],
       sm: [0, 0],
-      md: [1200 + 1550, -30 + 620]
+      md: [1550, -30]
     }
   },
   {
     label: 'CSS3', // CSS3
-    colors: ['#00e1ff', '#008cff'],
+    background: 'grad-lightblue',
     radius: {
       xs: 108,
       sm: 108,
@@ -197,10 +194,10 @@ const width = 2000,
     position: {
       xs: [320, 1300],
       sm: [1300, 250],
-      md: [1200 + 1400, 200 + 620]
+      md: [1400, 200]
     }
   }
-  ]
+  ];
 
 let size;
 
@@ -224,32 +221,18 @@ function generateOrbs(data, force, index, orbs) {
   force.size(orbs[index].position[size]);
   force.start();
 
+  const circle = svg.selectAll('#circle-' + index);
+
+  circle
+    .data(data.nodes.slice(1))
+    .enter()
+    .append('circle')
+    .attr('r', (d) => d.radius)
+    .attr('filter', () => 'url(#drop-shadow)')
+    .style('fill', () => `url(#${orbs[index].background})`);
+
   force.on('tick', () => {
-    const d = data.nodes[1],
-      grad = context.createRadialGradient(
-        d.x + (d.radius * .30),
-        d.y - (d.radius * .30),
-        0,
-        d.x + (d.radius * .30),
-        d.y - (d.radius * .30),
-        d.radius * 1.35);
-  
-    grad.addColorStop(0, orbs[index].colors[0]);
-    grad.addColorStop(1, orbs[index].colors[1]);
-
-    if (index === 0) {
-      context.clearRect(0, 0, width, height);
-    }
-    context.fillStyle = grad;
-    context.beginPath();
-    context.moveTo(d.x, d.y);
-    context.arc(d.x, d.y, d.radius, 0, 2 * Math.PI);
-    context.shadowOffsetX = -10;
-    context.shadowOffsetY = 10;
-    context.shadowBlur = 60;
-    context.shadowColor = 'rgba(0, 0, 0, 0.5)';
-
-    context.fill();
+    svg.selectAll('circle').attr('cx', (d) => d.x).attr('cy', (d) => d.y);
   });
 }
 
@@ -268,7 +251,7 @@ data.forEach((data, i) => {
   generateOrbs(data, forces[i], i, orbs);
 });
 
-canvas.on('mousemove', function () {
+svg.on('mousemove', function () {
   let p1 = d3.mouse(this);
 
   data.forEach((data, i) => {
