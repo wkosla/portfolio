@@ -261,7 +261,7 @@ for (let i = 0; i < orbs.length; i++) {
   data[i].root.radius = 0;
   data[i].root.fixed = true;
 
-  forces[i] = d3.layout.force().gravity(0.7).charge((d, i) => (i ? 0 : (-1 * orbs[i].radius[size] * 20))).nodes(data[i].nodes);
+  forces[i] = d3.layout.force().gravity(0.5).charge((d, i) => (i ? 0 : (-1 * orbs[i].radius[size] * 20))).nodes(data[i].nodes);
 }
 
 data.forEach((data, i) => {
