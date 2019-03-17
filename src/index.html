@@ -68,8 +68,12 @@
         <stop offset="0%" style="stop-color:#9e4cf1"></stop>
         <stop offset="100%" style="stop-color:#4d00d4"></stop>
       </radialGradient>
+      <radialGradient id="grad-magenta" cx="75%" cy="25%" r="100%" fx="75%" fy="25%">
+        <stop offset="0%" style="stop-color:#f3008c"></stop>
+        <stop offset="100%" style="stop-color:#8a003e"></stop>
+      </radialGradient>
       <filter id="drop-shadow" x="-100%" y="-100%" width="350%" height="350%">
-        <feGaussianBlur in="SourceAlpha" stdDeviation="50"></feGaussianBlur>
+        <feGaussianBlur in="SourceAlpha" stdDeviation="30"></feGaussianBlur>
         <feOffset dx="-20" dy="20" result="offsetblur"></feOffset>
         <feFlood flood-color="rgba(5,14,26,0.5)"></feFlood>
         <feComposite in2="offsetblur" operator="in"></feComposite>
@@ -168,12 +172,12 @@
         <div class="skills__orbs">
           <canvas class="skills__canvas"></canvas>
 
-          <svg class="skills__svg skills__svg--mobile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 890">
+          <svg class="skills__svg skills__svg--mobile" viewBox="0 0 320 890">
             <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-purple);" cx="267" cy="74" />
             <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="179" cy="121" />
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-darkpurple);" cx="41" cy="295" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-red);" cx="41" cy="295" />
             <circle r="96" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="286" cy="362" />
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-red);" cx="174" cy="825" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-magenta);" cx="174" cy="825" />
             <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-orange);" cx="270" cy="466" />
             <circle r="60" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="234" cy="399" />
             <circle r="108" filter="url(#drop-shadow)" style="fill: url(#grad-yellow);" cx="192" cy="238" />
@@ -184,12 +188,12 @@
             <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-lightblue);" cx="159" cy="660" />
           </svg>
 
-          <svg class="skills__svg skills__svg--tablet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 680">
+          <svg class="skills__svg skills__svg--tablet" viewBox="0 0 768 680">
             <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-purple);" cx="515" cy="80" />>
             <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="417" cy="113" />
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-darkpurple);" cx="296" cy="295" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-red);" cx="296" cy="295" />
             <circle r="96" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="521" cy="332" />
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-red);" cx="670" cy="451" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-magenta);" cx="670" cy="451" />
             <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-orange);" cx="603" cy="374" />
             <circle r="60" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="465" cy="404" />
             <circle r="108" filter="url(#drop-shadow)" style="fill: url(#grad-yellow);" cx="431" cy="246" />

@@ -604,7 +604,7 @@ a {
     @include tablet {
       display: unset;
     }
-    @include desktop {
+    @include laptop {
       display: none;
     }
   }
@@ -612,7 +612,7 @@ a {
 
 .skills__canvas {
   display: none;
-  @include desktop {
+  @include laptop {
     display: unset;
     height: 1500px;
     left: 50%;

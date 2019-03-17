@@ -200,7 +200,7 @@ const width = 2000,
       md: [1200 + 1400, 200 + 620]
     }
   }
-  ]
+  ];
 
 let size;
 
@@ -244,36 +244,42 @@ function generateOrbs(data, force, index, orbs) {
     context.beginPath();
     context.moveTo(d.x, d.y);
     context.arc(d.x, d.y, d.radius, 0, 2 * Math.PI);
-    context.shadowOffsetX = -10;
-    context.shadowOffsetY = 10;
-    context.shadowBlur = 60;
-    context.shadowColor = 'rgba(0, 0, 0, 0.5)';
+    context.shadowOffsetX = -20;
+    context.shadowOffsetY = 20;
+    context.shadowBlur = 70;
+    context.shadowColor = 'rgba(5, 14, 26, 0.5)';
 
     context.fill();
   });
 }
 
-for (let i = 0; i < orbs.length; i++) {
-  data[i] = {
-    nodes: generateNodes(orbs[i].radius[size] / 2)
-  };
-  data[i].root = data[i].nodes[0];
-  data[i].root.radius = 0;
-  data[i].root.fixed = true;
+function skillOrbsInit() {
+  if (this.innerWidth < 1024) return false;
 
-  forces[i] = d3.layout.force().gravity(0.5).charge((d, i) => (i ? 0 : (-1 * orbs[i].radius[size] * 20))).nodes(data[i].nodes);
+  for (let i = 0; i < orbs.length; i++) {
+    data[i] = {
+      nodes: generateNodes(orbs[i].radius[size] / 2)
+    };
+    data[i].root = data[i].nodes[0];
+    data[i].root.radius = 0;
+    data[i].root.fixed = true;
+  
+    forces[i] = d3.layout.force().gravity(0.5).charge((d, i) => (i ? 0 : (-1 * orbs[i].radius[size] * 20))).nodes(data[i].nodes);
+  }
+  
+  data.forEach((data, i) => {
+    generateOrbs(data, forces[i], i, orbs);
+  });
+  
+  canvas.on('mousemove', function () {
+    let p1 = d3.mouse(this);
+  
+    data.forEach((data, i) => {
+      data.root.px = p1[0];
+      data.root.py = p1[1];
+      forces[i].resume();
+    });
+  });
 }
 
-data.forEach((data, i) => {
-  generateOrbs(data, forces[i], i, orbs);
-});
-
-canvas.on('mousemove', function () {
-  let p1 = d3.mouse(this);
-
-  data.forEach((data, i) => {
-    data.root.px = p1[0];
-    data.root.py = p1[1];
-    forces[i].resume();
-  });
-});
+skillOrbsInit();
