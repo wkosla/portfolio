@@ -45,9 +45,9 @@ a {
 }
 
 .svg__defs {
+  height: 0;
   position: absolute;
   width: 0;
-  height: 0;
 }
 
 .row {
@@ -589,16 +589,37 @@ a {
   }
 }
 
-.skills__canvas {
-  height: 100%;
-  left: 50%;
+.skills__svg {
   overflow: visible;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
-  @include tablet {
+
+  &--mobile {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &--tablet {
+    display: none;
+
+    @include tablet {
+      display: unset;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+.skills__canvas {
+  display: none;
+  @include desktop {
+    display: unset;
     height: 1500px;
+    left: 50%;
+    overflow: visible;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 2000px;
   }
 }
