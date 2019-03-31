@@ -162,6 +162,15 @@ a {
   z-index: -1;
 }
 
+.page {
+  transition: opacity .3s;
+
+  &--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 // **********************
 // NAVIGATION
 // **********************
@@ -182,6 +191,13 @@ a {
   @include laptop {
     padding: 0 42px;
   }
+
+  &--open {
+    .nav__links {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
 }
 
 .nav__wrap {
@@ -191,6 +207,7 @@ a {
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1050px;
+  position: relative;
 }
 
 .nav__logo-wrap {
@@ -228,11 +245,19 @@ a {
 
 .nav__links {
   @include mobile-only {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 140px;
+    width: 100%;
   }
 
   list-style: none;
   padding-left: 0;
+  transition: .3s;
 }
 
 .nav__link {
@@ -241,11 +266,18 @@ a {
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: .25rem;
+  margin: 0 0 40px;
   text-transform: uppercase;
   transition: .2s;
+  width: 100%;
 
-  &:not(:last-child) {
-    margin-right: 32px;
+  @include tablet {
+    margin-bottom: 0;
+    width: auto;
+
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
   }
 
   &:hover {

@@ -1,4 +1,8 @@
-const width = 2000,
+const scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 500,
+    speedAsDuration: true
+  }),
+  width = 2000,
   height = 1500,
   canvas = d3.select('.skills__canvas').attr('width', width).attr('height', height),
   context = canvas.node().getContext('2d'),
@@ -183,3 +187,22 @@ function skillOrbsInit() {
 }
 
 skillOrbsInit();
+
+const main = document.getElementById('page'),
+  nav = document.querySelector('.nav'),
+  navBtn = document.querySelector('.nav__btn'),
+  navLinks = document.querySelectorAll('.nav a');
+
+function navToggle() {
+  if (window.innerWidth >= 768) return false;
+  main.classList.toggle('page--hidden');
+  nav.classList.toggle('nav--open');
+}
+
+navBtn.addEventListener('click', navToggle);
+navLinks.forEach(link => link.addEventListener('click', () => {
+  if (nav.classList.contains('nav--open')) {
+    navToggle();
+  }
+}));
+
