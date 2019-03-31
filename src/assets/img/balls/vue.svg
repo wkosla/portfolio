@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="433px" height="434px" viewBox="0 0 433 434" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="filter: drop-shadow(rgba(5, 14, 26, 0.5) -20px 20px 30px);">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>vue</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="68.1423095%" cy="27.7420305%" fx="68.1423095%" fy="27.7420305%" r="78.2587448%" id="radialGradient-4">
+            <stop stop-color="#BDFF16" offset="0%"></stop>
+            <stop stop-color="#59A52B" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="vue" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(87.000000, 90.000000)">
+                <g id="color-/-03-green" fill="url(#radialGradient-4)" fill-rule="evenodd">
+                    <circle id="shape" cx="128" cy="128" r="128" />
+                </g>
+            <path d="M171.253747,75 L170.640682,76.0683062 L129.840523,147.210335 L128.007703,150.406168 L126.163727,147.216748 L85.0230352,76.0752536 L84.4014703,75 L60,75 L127.999734,193 L196,75 L171.253747,75 Z M143.302675,75 L127.666763,102.547218 L111.692014,75 L89,75 L127.659328,142 L166,75 L143.302675,75 Z" id="logo-vue" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

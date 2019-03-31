@@ -75,7 +75,6 @@
       <filter id="drop-shadow" x="-100%" y="-100%" width="350%" height="350%">
         <feGaussianBlur in="SourceAlpha" stdDeviation="30"></feGaussianBlur>
         <feOffset dx="-20" dy="20" result="offsetblur"></feOffset>
-        <feFlood flood-color="rgba(5,14,26,0.5)"></feFlood>
         <feComposite in2="offsetblur" operator="in"></feComposite>
         <feMerge>
           <feMergeNode></feMergeNode>
@@ -173,35 +172,61 @@
           <canvas class="skills__canvas"></canvas>
 
           <svg class="skills__svg skills__svg--mobile" viewBox="0 0 320 890">
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-purple);" cx="267" cy="74" />
-            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="179" cy="121" />
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-red);" cx="41" cy="295" />
-            <circle r="96" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="286" cy="362" />
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-magenta);" cx="174" cy="825" />
-            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-orange);" cx="270" cy="466" />
-            <circle r="60" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="234" cy="399" />
-            <circle r="108" filter="url(#drop-shadow)" style="fill: url(#grad-yellow);" cx="192" cy="238" />
-            <circle r="72" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="-9" cy="450" />
-            <circle r="96" filter="url(#drop-shadow)" style="fill: url(#grad-green);" cx="77" cy="557" />
-            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-darkblue);" cx="288" cy="630" />
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="226" cy="715" />
-            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-lightblue);" cx="159" cy="660" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-purple);" cx="267" cy="74" opacity=".5" />
+            <circle r="66" style="fill: url(#grad-purple);" cx="267" cy="74" />
+            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="179" cy="121" opacity=".5" />
+            <circle r="54" style="fill: url(#grad-light);" cx="179" cy="121" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-red);" cx="41" cy="295" opacity=".5" />
+            <circle r="66" style="fill: url(#grad-red);" cx="41" cy="295" />
+            <circle r="96" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="286" cy="362" opacity=".5" />
+            <circle r="96" style="fill: url(#grad-light);" cx="286" cy="362" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-magenta);" cx="174" cy="825" opacity=".5" />
+            <circle r="66" style="fill: url(#grad-magenta);" cx="174" cy="825" />
+            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-orange);" cx="270" cy="466" opacity=".5" />
+            <circle r="54" style="fill: url(#grad-orange);" cx="270" cy="466" />
+            <circle r="60" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="234" cy="399" opacity=".5" />
+            <circle r="60" style="fill: url(#grad-light);" cx="234" cy="399" />
+            <circle r="108" filter="url(#drop-shadow)" style="fill: url(#grad-yellow);" cx="192" cy="238" opacity=".5" />
+            <circle r="108" style="fill: url(#grad-yellow);" cx="192" cy="238" />
+            <circle r="72" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="-9" cy="450" opacity=".5" />
+            <circle r="72" style="fill: url(#grad-light);" cx="-9" cy="450" />
+            <circle r="96" filter="url(#drop-shadow)" style="fill: url(#grad-green);" cx="77" cy="557" opacity=".5" />
+            <circle r="96" style="fill: url(#grad-green);" cx="77" cy="557" />
+            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-darkblue);" cx="288" cy="630" opacity=".5" />
+            <circle r="54" style="fill: url(#grad-darkblue);" cx="288" cy="630" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="226" cy="715" opacity=".5" />
+            <circle r="66" style="fill: url(#grad-light);" cx="226" cy="715" />
+            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-lightblue);" cx="159" cy="660" opacity=".5" />
+            <circle r="54" style="fill: url(#grad-lightblue);" cx="159" cy="660" />
           </svg>
 
           <svg class="skills__svg skills__svg--tablet" viewBox="0 0 768 680">
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-purple);" cx="515" cy="80" />>
-            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="417" cy="113" />
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-red);" cx="296" cy="295" />
-            <circle r="96" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="521" cy="332" />
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-magenta);" cx="670" cy="451" />
-            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-orange);" cx="603" cy="374" />
-            <circle r="60" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="465" cy="404" />
-            <circle r="108" filter="url(#drop-shadow)" style="fill: url(#grad-yellow);" cx="431" cy="246" />
-            <circle r="72" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="229" cy="457" />
-            <circle r="96" filter="url(#drop-shadow)" style="fill: url(#grad-green);" cx="324" cy="550" />
-            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-darkblue);" cx="72" cy="489" />
-            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="710" cy="199" />
-            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-lightblue);" cx="644" cy="125" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-purple);" cx="515" cy="80" opacity=".5" />
+            <circle r="66" style="fill: url(#grad-purple);" cx="515" cy="80" />
+            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="417" cy="113" opacity=".5" />
+            <circle r="54" style="fill: url(#grad-light);" cx="417" cy="113" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-red);" cx="296" cy="295" opacity=".5" />
+            <circle r="66" style="fill: url(#grad-red);" cx="296" cy="295" />
+            <circle r="96" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="521" cy="332" opacity=".5" />
+            <circle r="96" style="fill: url(#grad-light);" cx="521" cy="332" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-magenta);" cx="670" cy="451" opacity=".5" />
+            <circle r="66" style="fill: url(#grad-magenta);" cx="670" cy="451" />
+            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-orange);" cx="603" cy="374" opacity=".5" />
+            <circle r="54" style="fill: url(#grad-orange);" cx="603" cy="374" />
+            <circle r="60" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="465" cy="404" opacity=".5" />
+            <circle r="60" style="fill: url(#grad-light);" cx="465" cy="404" />
+            <circle r="108" filter="url(#drop-shadow)" style="fill: url(#grad-yellow);" cx="431" cy="246" opacity=".5" />
+            <circle r="108" style="fill: url(#grad-yellow);" cx="431" cy="246" />
+            <circle r="72" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="229" cy="457" opacity=".5" />
+            <circle r="72" style="fill: url(#grad-light);" cx="229" cy="457" />
+            <circle r="96" filter="url(#drop-shadow)" style="fill: url(#grad-green);" cx="324" cy="550" opacity=".5" />
+            <circle r="96" style="fill: url(#grad-green);" cx="324" cy="550" />
+            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-darkblue);" cx="72" cy="489" opacity=".5" />
+            <circle r="54" style="fill: url(#grad-darkblue);" cx="72" cy="489" />
+            <circle r="66" filter="url(#drop-shadow)" style="fill: url(#grad-light);" cx="710" cy="199" opacity=".5" />
+            <circle r="66" style="fill: url(#grad-light);" cx="710" cy="199" />
+            <circle r="54" filter="url(#drop-shadow)" style="fill: url(#grad-lightblue);" cx="644" cy="125" opacity=".5" />
+            <circle r="54" style="fill: url(#grad-lightblue);" cx="644" cy="125" />
           </svg>
         </div>
         

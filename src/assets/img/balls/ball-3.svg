@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="370px" height="370px" viewBox="0 0 370 370" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="filter: drop-shadow(rgba(5, 14, 26, 0.5) -20px 20px 30px);">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>ball-3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="71.5647563%" cy="23.6447992%" fx="71.5647563%" fy="23.6447992%" r="82.3433284%" id="radialGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#E6F0FA" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="ball-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="element-/-shape-ball" transform="translate(87.000000, 90.000000)">
+            <g id="color-/-00-base" fill="url(#radialGradient-4)" fill-rule="evenodd">
+                <circle id="shape" cx="96" cy="96" r="96"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

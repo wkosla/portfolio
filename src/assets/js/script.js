@@ -7,210 +7,116 @@ const width = 2000,
   orbs = [{
     label: 'Sass', // SASS
     colors: ['#cb00cb', '#6711a5'],
-    radius: {
-      xs: 132,
-      sm: 132,
-      md: 176
-    },
-    position: {
-      xs: [500, 150],
-      sm: [1000, 150],
-      md: [1200 + 1000, 80 + 620]
-    }
+    file: '../assets/img/balls/sass.svg',
+    width: 353 / 2,
+    radius: 176,
+    position: [1200 + 1000, 80 + 620]
   },
   {
     label: '',
     colors: ['#fff', '#e6f0fa'],
-    radius: {
-      xs: 108,
-      sm: 108,
-      md: 144
-    },
-    position: {
-      xs: [300, 220],
-      sm: [800, 220],
-      md: [1200 + 750, 200 + 620]
-    }
+    file: '../assets/img/balls/ball-5.svg',
+    width: 321 / 2,
+    radius: 144,
+    position: [1200 + 750, 200 + 620]
   },
   {
     label: 'Gulp', //Gulp
     colors: ['#ff0051', '#940000'],
-    radius: {
-      xs: 132,
-      sm: 132,
-      md: 176
-    },
-    position: {
-      xs: [80, 560],
-      sm: [550, 550],
-      md: [1200 + 420, 650 + 620]
-    }
+    file: '../assets/img/balls/gulp.svg',
+    width: 353 / 2,
+    radius: 176,
+    position: [1200 + 420, 650 + 620]
   },
   {
     label: '',
     colors: ['#fff', '#e6f0fa'],
-    radius: {
-      xs: 192,
-      sm: 192,
-      md: 256
-    },
-    position: {
-      xs: [580, 670],
-      sm: [1060, 670],
-      md: [1200 + 1100, 800 + 620]
-    }
+    file: '../assets/img/balls/ball-4.svg',
+    width: 433 / 2,
+    radius: 256,
+    position: [1200 + 1100, 800 + 620]
   },
   {
     label: 'GIT', // GIT
     colors: ['#f3008c', '#8a003e'],
-    radius: {
-      xs: 132,
-      sm: 132,
-      md: 176
-    },
-    position: {
-      xs: [350, 1640],
-      sm: [1350, 900],
-      md: [1200 + 1500, 1100 + 620]
-    }
+    file: '../assets/img/balls/git.svg',
+    width: 353 / 2,
+    radius: 176,
+    position: [1200 + 1500, 1100 + 620]
   },
   {
     label: 'HTML5', // HTML5
     colors: ['#ffa700', '#ff4200'],
-    radius: {
-      xs: 108,
-      sm: 108,
-      md: 144
-    },
-    position: {
-      xs: [510, 950],
-      sm: [1220, 750],
-      md: [1200 + 1300, 900 + 620]
-    }
+    file: '../assets/img/balls/html.svg',
+    width: 322 / 2,
+    radius: 144,
+    position: [1200 + 1300, 900 + 620]
   },
   {
     label: '',
     colors: ['#fff', '#e6f0fa'],
-    radius: {
-      xs: 120,
-      sm: 120,
-      md: 160
-    },
-    position: {
-      xs: [430, 790],
-      sm: [920, 800],
-      md: [1200 + 900, 950 + 620]
-    }
+    file: '../assets/img/balls/ball-1.svg',
+    width: 337 / 2,
+    radius: 160,
+    position: [1200 + 900, 950 + 620]
   },
   {
     label: 'JS', // JAVASCRIPT
     colors: ['#ffdf00', '#ff9100'],
-    radius: {
-      xs: 216,
-      sm: 216,
-      md: 288
-    },
-    position: {
-      xs: [370, 500],
-      sm: [850, 500],
-      md: [1200 + 830, 560 + 620]
-    }
+    file: '../assets/img/balls/javascript.svg',
+    width: 466 / 2,
+    radius: 288,
+    position: [1200 + 830, 560 + 620]
   },
   {
     label: '',
     colors: ['#fff', '#e6f0fa'],
-    radius: {
-      xs: 144,
-      sm: 144,
-      md: 192
-    },
-    position: {
-      xs: [-20, 920],
-      sm: [450, 900],
-      md: [1200 + 250, 1100 + 620]
-    }
+    file: '../assets/img/balls/ball-3.svg',
+    width: 370 / 2,
+    radius: 192,
+    position: [1200 + 250, 1100 + 620]
   },
   {
     label: 'Vue', // VUE
     colors: ['#bdff16', '#59a52b'],
-    radius: {
-      xs: 192,
-      sm: 192,
-      md: 256
-    },
-    position: {
-      xs: [170, 1150],
-      sm: [650, 1120],
-      md: [1200 + 500, 1400 + 620]
-    }
+    file: '../assets/img/balls/vue.svg',
+    width: 433 / 2,
+    radius: 256,
+    position: [1200 + 500, 1400 + 620]
   },
   {
-    label: 'Webpack', // WHEBPACK
+    label: 'Webpack', // WEBPACK
     colors: ['#3174fa', '#1246c9'],
-    radius: {
-      xs: 108,
-      sm: 108,
-      md: 144
-    },
-    position: {
-      xs: [570, 1250],
-      sm: [150, 1000],
-      md: [1200 + -200, 1300 + 620]
-    }
+    file: '../assets/img/balls/webpack.svg',
+    width: 321 / 2,
+    radius: 144,
+    position: [1200 + -200, 1300 + 620]
   },
   {
     label: '',
     colors: ['#fff', '#e6f0fa'],
-    radius: {
-      xs: 132,
-      sm: 132,
-      md: 176
-    },
-    position: {
-      xs: [450, 1420],
-      sm: [1450, 400],
-      md: [1200 + 1600, 400 + 620]
-    }
+    file: '../assets/img/balls/ball-2.svg',
+    width: 354 / 2,
+    radius: 176,
+    position: [1200 + 1600, 400 + 620]
   },
   {
     label: '',
     colors: ['#fff', '#e6f0fa'],
-    radius: {
-      xs: 0,
-      sm: 0,
-      md: 224
-    },
-    position: {
-      xs: [0, 0],
-      sm: [0, 0],
-      md: [1200 + 1550, -30 + 620]
-    }
+    file: '../assets/img/balls/ball-6.svg',
+    width: 401 / 2,
+    radius: 224,
+    position: [1200 + 1550, -30 + 620]
   },
   {
     label: 'CSS3', // CSS3
     colors: ['#00e1ff', '#008cff'],
-    radius: {
-      xs: 108,
-      sm: 108,
-      md: 144
-    },
-    position: {
-      xs: [320, 1300],
-      sm: [1300, 250],
-      md: [1200 + 1400, 200 + 620]
-    }
+    file: '../assets/img/balls/css.svg',
+    width: 321 / 2,
+    radius: 144,
+    position: [1200 + 1400, 200 + 620]
   }
   ];
-
-let size;
-
-if (window.innerWidth < 768) {
-  size = 'xs';
-} else if (window.innerWidth < 1024) {
-  size = 'sm';
-} else {
-  size = 'md';
-}
 
 function generateNodes(radius) {
   return d3.range(2).map(() => {
@@ -221,7 +127,7 @@ function generateNodes(radius) {
 }
 
 function generateOrbs(data, force, index, orbs) {
-  force.size(orbs[index].position[size]);
+  force.size(orbs[index].position);
   force.start();
 
   force.on('tick', () => {
@@ -240,15 +146,9 @@ function generateOrbs(data, force, index, orbs) {
     if (index === 0) {
       context.clearRect(0, 0, width, height);
     }
-    context.fillStyle = grad;
-    context.beginPath();
-    context.moveTo(d.x, d.y);
-    context.arc(d.x, d.y, d.radius, 0, 2 * Math.PI);
-    context.shadowOffsetX = -20;
-    context.shadowOffsetY = 20;
-    context.shadowBlur = 70;
-    context.shadowColor = 'rgba(5, 14, 26, 0.5)';
-
+    let img = new Image();
+    img.src = orbs[index].file;
+    context.drawImage(img, d.x - orbs[index].width, d.y - orbs[index].width);
     context.fill();
   });
 }
@@ -258,13 +158,13 @@ function skillOrbsInit() {
 
   for (let i = 0; i < orbs.length; i++) {
     data[i] = {
-      nodes: generateNodes(orbs[i].radius[size] / 2)
+      nodes: generateNodes(orbs[i].radius / 2)
     };
     data[i].root = data[i].nodes[0];
     data[i].root.radius = 0;
     data[i].root.fixed = true;
   
-    forces[i] = d3.layout.force().gravity(0.5).charge((d, i) => (i ? 0 : (-1 * orbs[i].radius[size] * 20))).nodes(data[i].nodes);
+    forces[i] = d3.layout.force().gravity(0.5).charge((d, i) => (i ? 0 : (-1 * orbs[i].radius * 20))).nodes(data[i].nodes);
   }
   
   data.forEach((data, i) => {

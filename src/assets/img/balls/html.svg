@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="322px" height="322px" viewBox="0 0 322 322" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="filter: drop-shadow(rgba(5, 14, 26, 0.5) -20px 20px 30px);">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>html</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="70.2634865%" cy="25.2116528%" fx="70.2634865%" fy="25.2116528%" r="79.3941366%" id="radialGradient-4">
+            <stop stop-color="#FFA700" offset="0%"></stop>
+            <stop stop-color="#FF4200" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="html" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(87.000000, 90.000000)">
+                <g id="color-/-05-orange" mask="url(#mask-2)" fill="url(#radialGradient-4)" fill-rule="evenodd">
+                    <circle id="shape" cx="72" cy="72" r="72"></circle>
+                </g>
+            <polygon id="logo-css" fill="#FFFFFF" points="53.9157315 48.5307866 102.812626 48.5307866 104 36 97.8412933 36 40 36 43.5657584 73.5905504 87.5258687 73.5905504 85.8966389 90.6577532 71.5736 94.113898 57.6415035 90.6577532 56.8268887 80.5046494 44.2203597 80.5046494 46.1587067 100.939331 72.0990994 108 97.8412933 100.939331 101.603432 61.2769037 55.4340427 61.2769037"></polygon>
+        </g>
+    </g>
+</svg>
