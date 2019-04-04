@@ -1,213 +1,126 @@
-const svg = d3.select('.skills__svg'),
+const scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 500,
+    speedAsDuration: true
+  }),
+  width = 2000,
+  height = 1500,
+  canvas = d3.select('.skills__canvas').attr('width', width).attr('height', height),
+  context = canvas.node().getContext('2d'),
   data = [],
   forces = [],
   orbs = [{
     label: 'Sass', // SASS
-    background: 'grad-purple',
-    radius: {
-      xs: 132,
-      sm: 132,
-      md: 176
-    },
-    position: {
-      xs: [500, 150],
-      sm: [1000, 150],
-      md: [1000, 80]
-    }
+    colors: ['#cb00cb', '#6711a5'],
+    file: '../assets/img/balls/sass.svg',
+    width: 353 / 2,
+    radius: 176,
+    position: [1200 + 1000, 80 + 620]
   },
   {
     label: '',
-    background: 'grad-light',
-    radius: {
-      xs: 108,
-      sm: 108,
-      md: 144
-    },
-    position: {
-      xs: [300, 220],
-      sm: [800, 220],
-      md: [750, 200]
-    }
+    colors: ['#fff', '#e6f0fa'],
+    file: '../assets/img/balls/ball-5.svg',
+    width: 321 / 2,
+    radius: 144,
+    position: [1200 + 750, 200 + 620]
   },
   {
-    label: 'jQuery', //JQUERY
-    background: 'grad-darkpurple',
-    radius: {
-      xs: 132,
-      sm: 132,
-      md: 176
-    },
-    position: {
-      xs: [80, 560],
-      sm: [550, 550],
-      md: [420, 650]
-    }
+    label: 'Gulp', //Gulp
+    colors: ['#ff0051', '#940000'],
+    file: '../assets/img/balls/gulp.svg',
+    width: 353 / 2,
+    radius: 176,
+    position: [1200 + 420, 650 + 620]
   },
   {
     label: '',
-    background: 'grad-light',
-    radius: {
-      xs: 192,
-      sm: 192,
-      md: 256
-    },
-    position: {
-      xs: [580, 670],
-      sm: [1060, 670],
-      md: [1100, 800]
-    }
+    colors: ['#fff', '#e6f0fa'],
+    file: '../assets/img/balls/ball-4.svg',
+    width: 433 / 2,
+    radius: 256,
+    position: [1200 + 1100, 800 + 620]
   },
   {
     label: 'GIT', // GIT
-    background: 'grad-red',
-    radius: {
-      xs: 132,
-      sm: 132,
-      md: 176
-    },
-    position: {
-      xs: [350, 1640],
-      sm: [1350, 900],
-      md: [1500, 1100]
-    }
+    colors: ['#f3008c', '#8a003e'],
+    file: '../assets/img/balls/git.svg',
+    width: 353 / 2,
+    radius: 176,
+    position: [1200 + 1500, 1100 + 620]
   },
   {
     label: 'HTML5', // HTML5
-    background: 'grad-orange',
-    radius: {
-      xs: 108,
-      sm: 108,
-      md: 144
-    },
-    position: {
-      xs: [510, 950],
-      sm: [1220, 750],
-      md: [1300, 900]
-    }
+    colors: ['#ffa700', '#ff4200'],
+    file: '../assets/img/balls/html.svg',
+    width: 322 / 2,
+    radius: 144,
+    position: [1200 + 1300, 900 + 620]
   },
   {
     label: '',
-    background: 'grad-light',
-    radius: {
-      xs: 120,
-      sm: 120,
-      md: 160
-    },
-    position: {
-      xs: [430, 790],
-      sm: [920, 800],
-      md: [900, 950]
-    }
+    colors: ['#fff', '#e6f0fa'],
+    file: '../assets/img/balls/ball-1.svg',
+    width: 337 / 2,
+    radius: 160,
+    position: [1200 + 900, 950 + 620]
   },
   {
     label: 'JS', // JAVASCRIPT
-    background: 'grad-yellow',
-    radius: {
-      xs: 216,
-      sm: 216,
-      md: 288
-    },
-    position: {
-      xs: [370, 500],
-      sm: [850, 500],
-      md: [830, 560]
-    }
+    colors: ['#ffdf00', '#ff9100'],
+    file: '../assets/img/balls/javascript.svg',
+    width: 466 / 2,
+    radius: 288,
+    position: [1200 + 830, 560 + 620]
   },
   {
     label: '',
-    background: 'grad-light',
-    radius: {
-      xs: 144,
-      sm: 144,
-      md: 192
-    },
-    position: {
-      xs: [-20, 920],
-      sm: [450, 900],
-      md: [250, 1100]
-    }
+    colors: ['#fff', '#e6f0fa'],
+    file: '../assets/img/balls/ball-3.svg',
+    width: 370 / 2,
+    radius: 192,
+    position: [1200 + 250, 1100 + 620]
   },
   {
     label: 'Vue', // VUE
-    background: 'grad-green',
-    radius: {
-      xs: 192,
-      sm: 192,
-      md: 256
-    },
-    position: {
-      xs: [170, 1150],
-      sm: [650, 1120],
-      md: [500, 1400]
-    }
+    colors: ['#bdff16', '#59a52b'],
+    file: '../assets/img/balls/vue.svg',
+    width: 433 / 2,
+    radius: 256,
+    position: [1200 + 500, 1400 + 620]
   },
   {
-    label: 'PS', // PHOTOSHOP
-    background: 'grad-darkblue',
-    radius: {
-      xs: 108,
-      sm: 108,
-      md: 144
-    },
-    position: {
-      xs: [570, 1250],
-      sm: [150, 1000],
-      md: [-200, 1300]
-    }
+    label: 'Webpack', // WEBPACK
+    colors: ['#3174fa', '#1246c9'],
+    file: '../assets/img/balls/webpack.svg',
+    width: 321 / 2,
+    radius: 144,
+    position: [1200 + -200, 1300 + 620]
   },
   {
     label: '',
-    background: 'grad-light',
-    radius: {
-      xs: 132,
-      sm: 132,
-      md: 176
-    },
-    position: {
-      xs: [450, 1420],
-      sm: [1450, 400],
-      md: [1600, 400]
-    }
+    colors: ['#fff', '#e6f0fa'],
+    file: '../assets/img/balls/ball-2.svg',
+    width: 354 / 2,
+    radius: 176,
+    position: [1200 + 1600, 400 + 620]
   },
   {
     label: '',
-    background: 'grad-light',
-    radius: {
-      xs: 0,
-      sm: 0,
-      md: 224
-    },
-    position: {
-      xs: [0, 0],
-      sm: [0, 0],
-      md: [1550, -30]
-    }
+    colors: ['#fff', '#e6f0fa'],
+    file: '../assets/img/balls/ball-6.svg',
+    width: 401 / 2,
+    radius: 224,
+    position: [1200 + 1550, -30 + 620]
   },
   {
     label: 'CSS3', // CSS3
-    background: 'grad-lightblue',
-    radius: {
-      xs: 108,
-      sm: 108,
-      md: 144
-    },
-    position: {
-      xs: [320, 1300],
-      sm: [1300, 250],
-      md: [1400, 200]
-    }
+    colors: ['#00e1ff', '#008cff'],
+    file: '../assets/img/balls/css.svg',
+    width: 321 / 2,
+    radius: 144,
+    position: [1200 + 1400, 200 + 620]
   }
   ];
-
-let size;
-
-if (window.innerWidth < 768) {
-  size = 'xs';
-} else if (window.innerWidth < 1024) {
-  size = 'sm';
-} else {
-  size = 'md';
-}
 
 function generateNodes(radius) {
   return d3.range(2).map(() => {
@@ -218,45 +131,78 @@ function generateNodes(radius) {
 }
 
 function generateOrbs(data, force, index, orbs) {
-  force.size(orbs[index].position[size]);
+  force.size(orbs[index].position);
   force.start();
 
-  const circle = svg.selectAll('#circle-' + index);
-
-  circle
-    .data(data.nodes.slice(1))
-    .enter()
-    .append('circle')
-    .attr('r', (d) => d.radius)
-    .attr('filter', () => 'url(#drop-shadow)')
-    .style('fill', () => `url(#${orbs[index].background})`);
-
   force.on('tick', () => {
-    svg.selectAll('circle').attr('cx', (d) => d.x).attr('cy', (d) => d.y);
+    const d = data.nodes[1],
+      grad = context.createRadialGradient(
+        d.x + (d.radius * .30),
+        d.y - (d.radius * .30),
+        0,
+        d.x + (d.radius * .30),
+        d.y - (d.radius * .30),
+        d.radius * 1.35);
+  
+    grad.addColorStop(0, orbs[index].colors[0]);
+    grad.addColorStop(1, orbs[index].colors[1]);
+
+    if (index === 0) {
+      context.clearRect(0, 0, width, height);
+    }
+    let img = new Image();
+    img.src = orbs[index].file;
+    context.drawImage(img, d.x - orbs[index].width, d.y - orbs[index].width);
+    context.fill();
   });
 }
 
-for (let i = 0; i < orbs.length; i++) {
-  data[i] = {
-    nodes: generateNodes(orbs[i].radius[size] / 2)
-  };
-  data[i].root = data[i].nodes[0];
-  data[i].root.radius = 0;
-  data[i].root.fixed = true;
+function skillOrbsInit() {
+  if (this.innerWidth < 1024) return false;
 
-  forces[i] = d3.layout.force().gravity(0.7).charge((d, i) => (i ? 0 : (-1 * orbs[i].radius[size] * 20))).nodes(data[i].nodes);
-}
-
-data.forEach((data, i) => {
-  generateOrbs(data, forces[i], i, orbs);
-});
-
-svg.on('mousemove', function () {
-  let p1 = d3.mouse(this);
-
+  for (let i = 0; i < orbs.length; i++) {
+    data[i] = {
+      nodes: generateNodes(orbs[i].radius / 2)
+    };
+    data[i].root = data[i].nodes[0];
+    data[i].root.radius = 0;
+    data[i].root.fixed = true;
+  
+    forces[i] = d3.layout.force().gravity(0.5).charge((d, i) => (i ? 0 : (-1 * orbs[i].radius * 20))).nodes(data[i].nodes);
+  }
+  
   data.forEach((data, i) => {
-    data.root.px = p1[0];
-    data.root.py = p1[1];
-    forces[i].resume();
+    generateOrbs(data, forces[i], i, orbs);
   });
-});
+  
+  canvas.on('mousemove', function () {
+    let p1 = d3.mouse(this);
+  
+    data.forEach((data, i) => {
+      data.root.px = p1[0];
+      data.root.py = p1[1];
+      forces[i].resume();
+    });
+  });
+}
+
+skillOrbsInit();
+
+const main = document.getElementById('page'),
+  nav = document.querySelector('.nav'),
+  navBtn = document.querySelector('.nav__btn'),
+  navLinks = document.querySelectorAll('.nav a');
+
+function navToggle() {
+  if (window.innerWidth >= 768) return false;
+  main.classList.toggle('page--hidden');
+  nav.classList.toggle('nav--open');
+}
+
+navBtn.addEventListener('click', navToggle);
+navLinks.forEach(link => link.addEventListener('click', () => {
+  if (nav.classList.contains('nav--open')) {
+    navToggle();
+  }
+}));
+
