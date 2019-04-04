@@ -140,21 +140,21 @@ function generateOrbs(data, force, index, orbs) {
   force.on('tick', () => {
     svg.selectAll('image')
       .attr('x', (d) => {
-        return d.x - orbs[index].width;
+        return d.x - orbs[index].width / 2;
       })
-      .attr('y', (d) => d.y - orbs[index].width);
+      .attr('y', (d) => d.y - orbs[index].width / 2);
   });
 }
 
 for (let i = 0; i < orbs.length; i++) {
   data[i] = {
-    nodes: generateNodes(orbs[i].radius / 2)
+    nodes: generateNodes(orbs[i].width)
   };
   data[i].root = data[i].nodes[0];
   data[i].root.radius = 0;
   data[i].root.fixed = true;
 
-  forces[i] = d3.layout.force().gravity(0.7).charge((d, i) => (i ? 0 : (-1 * orbs[i].radius * 20))).nodes(data[i].nodes);
+  forces[i] = d3.layout.force().gravity(0.7).charge((d, i) => (i ? 0 : (-1 * orbs[i].width * 20))).nodes(data[i].nodes);
 }
 
 data.forEach((data, i) => {
