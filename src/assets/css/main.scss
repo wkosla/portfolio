@@ -771,12 +771,13 @@ a {
 }
 
 .works__work {
-  filter: drop-shadow(rgba(4, 15, 26, 0.5) -10px 10px 30px);
+  overflow: visible;
   float: right;
   height: 72vw;
   max-height: 290px;
   max-width: 260px;
   width: 64vw;
+
   &:nth-child(2n + 1) {
     float: left;
   }

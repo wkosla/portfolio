@@ -5,6 +5,8 @@ $light-tertiary: transparentize($light-primary, .5);
 $dark-primary: #0c1751;
 $dark-secondary: transparentize($dark-primary, .7);
 $dark-tertiary: transparentize($dark-primary, .9);
+$dark-shadow: rgba(5, 14, 26, .5);
+$blue-shadow: #2d6ef4;
 
 // GRADIENTS
 //sass-lint:disable no-color-literals
@@ -27,8 +29,8 @@ $dark-purple: radial-gradient(circle at 75% 25%, #9e4cf1 0%, #4d00d4 100%);
 $orbs: light $light, darkblue $dark-blue, lightblue $light-blue, aqua $aqua, green $green, yellow $yellow, orange $orange, red $red, magenta $magenta, pink $pink, purple $purple, darkpurple $dark-purple; //sass-lint:disable-line no-color-keywords
 
 // SHADOWS
-$shadow-black: -20px 20px 70px 0 rgba(5, 14, 26, .5);
-$shadow-blue: 0 5px 20px 0 #2d6ef4; //sass-lint:disable-line no-color-literals
+$shadow-black: -20px 20px 70px 0 $dark-shadow;
+$shadow-blue: 0 5px 20px 0 $blue-shadow;
 
 // FONTS
 $text-font: 'Ubuntu Mono', sans;
