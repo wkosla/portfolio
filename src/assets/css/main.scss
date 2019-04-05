@@ -216,7 +216,18 @@ a {
 }
 
 .nav__logo {
+  cursor: pointer;
   width: 55px;
+  
+  .nav__k {
+    transition: .2s;
+  }
+
+  &:hover {
+    .nav__k {
+      fill-opacity: 1;
+    }
+  }
 }
 
 .nav__name {
@@ -290,6 +301,21 @@ a {
   position: fixed;
   right: 48px;
   width: 32px;
+
+  path {
+    &:nth-child(2) {
+      opacity: 0;
+      transition: .2s;
+    }
+  }
+
+  &:hover {
+    path {
+      &:nth-child(2) {
+        opacity: 1;
+      }
+    }    
+  }
 }
 
 // **********************

@@ -33,13 +33,13 @@ const scroll = new SmoothScroll('a[href*="#"]', {
     label: 'GIT', // GIT
     file: '../assets/img/balls/git.svg',
     width: 353,
-    position: [1500, 1100]
+    position: [1450, 1150]
   },
   {
     label: 'HTML5', // HTML5
     file: '../assets/img/balls/html.svg',
     width: 322,
-    position: [1300, 900]
+    position: [1400, 1000]
   },
   {
     label: '',
