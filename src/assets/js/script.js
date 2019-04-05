@@ -1,4 +1,8 @@
-const svg = d3.select('.skills__svg'),
+const scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 500,
+    speedAsDuration: true
+  }),
+  svg = d3.select('.skills__svg'),
   data = [],
   forces = [],
   orbs = [{
@@ -7,7 +11,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/sass.svg',
     width: 353,
     radius: 176,
-    position: [1200 + 1000, 80 + 620]
+    position: [1000, 80]
   },
   {
     label: '',
@@ -15,7 +19,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/ball-5.svg',
     width: 321,
     radius: 144,
-    position: [1200 + 750, 200 + 620]
+    position: [750, 200]
   },
   {
     label: 'Gulp', //Gulp
@@ -23,7 +27,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/gulp.svg',
     width: 353,
     radius: 176,
-    position: [1200 + 420, 650 + 620]
+    position: [420, 650]
   },
   {
     label: '',
@@ -31,7 +35,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/ball-4.svg',
     width: 433,
     radius: 256,
-    position: [1200 + 1100, 800 + 620]
+    position: [1100, 800]
   },
   {
     label: 'GIT', // GIT
@@ -39,7 +43,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/git.svg',
     width: 353,
     radius: 176,
-    position: [1200 + 1500, 1100 + 620]
+    position: [1500, 1100]
   },
   {
     label: 'HTML5', // HTML5
@@ -47,7 +51,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/html.svg',
     width: 322,
     radius: 144,
-    position: [1200 + 1300, 900 + 620]
+    position: [1300, 900]
   },
   {
     label: '',
@@ -55,7 +59,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/ball-1.svg',
     width: 337,
     radius: 160,
-    position: [1200 + 900, 950 + 620]
+    position: [900, 950]
   },
   {
     label: 'JS', // JAVASCRIPT
@@ -63,7 +67,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/javascript.svg',
     width: 466,
     radius: 288,
-    position: [1200 + 830, 560 + 620]
+    position: [830, 560]
   },
   {
     label: '',
@@ -71,7 +75,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/ball-3.svg',
     width: 370,
     radius: 192,
-    position: [1200 + 250, 1100 + 620]
+    position: [250, 1100]
   },
   {
     label: 'Vue', // VUE
@@ -79,7 +83,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/vue.svg',
     width: 433,
     radius: 256,
-    position: [1200 + 500, 1400 + 620]
+    position: [500, 1400]
   },
   {
     label: 'Webpack', // WEBPACK
@@ -87,7 +91,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/webpack.svg',
     width: 321,
     radius: 144,
-    position: [1200 + -200, 1300 + 620]
+    position: [-200, 1300]
   },
   {
     label: '',
@@ -95,7 +99,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/ball-2.svg',
     width: 354,
     radius: 176,
-    position: [1200 + 1600, 400 + 620]
+    position: [1600, 400]
   },
   {
     label: '',
@@ -103,7 +107,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/ball-6.svg',
     width: 401,
     radius: 224,
-    position: [1200 + 1550, -30 + 620]
+    position: [1550, -30]
   },
   {
     label: 'CSS3', // CSS3
@@ -111,7 +115,7 @@ const svg = d3.select('.skills__svg'),
     file: '../assets/img/balls/css.svg',
     width: 321,
     radius: 144,
-    position: [1200 + 1400, 200 + 620]
+    position: [1400, 200]
   }
   ];
 
@@ -170,3 +174,21 @@ svg.on('mousemove', function () {
     forces[i].resume();
   });
 });
+
+const main = document.getElementById('page'),
+  nav = document.querySelector('.nav'),
+  navBtn = document.querySelector('.nav__btn'),
+  navLinks = document.querySelectorAll('.nav a');
+
+function navToggle() {
+  if (window.innerWidth >= 768) return false;
+  main.classList.toggle('page--hidden');
+  nav.classList.toggle('nav--open');
+}
+
+navBtn.addEventListener('click', navToggle);
+navLinks.forEach(link => link.addEventListener('click', () => {
+  if (nav.classList.contains('nav--open')) {
+    navToggle();
+  }
+}));

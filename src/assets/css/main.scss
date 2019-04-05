@@ -640,19 +640,13 @@ a {
       display: none;
     }
   }
-}
 
-.skills__canvas {
-  display: none;
-  @include laptop {
-    display: unset;
-    height: 1500px;
-    left: 50%;
-    overflow: visible;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 2000px;
+  &--large {
+    display: none;
+
+    @include laptop {
+      display: unset;
+    }
   }
 }
 
