@@ -622,17 +622,7 @@ a {
 }
 
 .skills__svg {
-  height: 100%;
-  left: 50%;
   overflow: visible;
-  position: absolute;
-  top: 0;
-  transform: translateX(-50%);
-  width: 320px;
-  z-index: 9999;
-  @include tablet {
-    width: 768px;
-  }
 
   &--mobile {
     @include tablet {
@@ -648,22 +638,6 @@ a {
     }
     @include laptop {
       display: none;
-    }
-  }
-
-  &--large {
-    display: none;
-
-    @include laptop {
-      display: unset;
-      height: 100%;
-      left: 50%;
-      overflow: visible;
-      position: absolute;
-      top: 0;
-      transform: translateX(-50%);
-      width: 768px;
-      z-index: 9999;
     }
   }
 }
