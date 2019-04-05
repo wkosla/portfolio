@@ -171,6 +171,31 @@ a {
   }
 }
 
+.row__anchor {
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    background-color: $light-primary;
+    border-radius: 2px;
+    bottom: 9px;
+    content: '';
+    display: block;
+    height: 2px;
+    left: -2px;
+    position: absolute;
+    transition: .2s;
+    width: calc(100% + 4px);
+    z-index: 0;
+  }
+
+  &:hover {
+    &::after {
+      bottom: calc(50% - 4px);
+    }
+  }
+}
+
 // **********************
 // NAVIGATION
 // **********************
@@ -650,7 +675,6 @@ a {
 .skills__svg {
   overflow: visible;
   position: relative;
-  z-index: 9999;
 
   &--mobile {
     @include tablet {
