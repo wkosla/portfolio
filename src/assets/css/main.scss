@@ -623,6 +623,8 @@ a {
 
 .skills__svg {
   overflow: visible;
+  position: relative;
+  z-index: 9999;
 
   &--mobile {
     @include tablet {
