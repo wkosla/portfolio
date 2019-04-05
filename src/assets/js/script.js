@@ -151,11 +151,13 @@ const main = document.getElementById('page'),
   nav = document.querySelector('.nav'),
   navBtn = document.querySelector('.nav__btn'),
   navLinks = document.querySelectorAll('.nav a');
+let navOpen = false;
 
 function navToggle() {
   if (window.innerWidth >= 768) return false;
   main.classList.toggle('page--hidden');
   nav.classList.toggle('nav--open');
+  navOpen = !navOpen;
 }
 
 navBtn.addEventListener('click', navToggle);
@@ -164,3 +166,7 @@ navLinks.forEach(link => link.addEventListener('click', () => {
     navToggle();
   }
 }));
+
+window.addEventListener('wheel', evt => {
+  if (navOpen) evt.preventDefault();
+});
