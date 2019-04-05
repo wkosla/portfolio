@@ -8,10 +8,20 @@
             <stop stop-color="#3174FA" offset="0%"></stop>
             <stop stop-color="#1246C9" offset="100%"></stop>
         </radialGradient>
+      <filter id="drop-shadow" x="-100%" y="-100%" width="350%" height="350%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="30"></feGaussianBlur>
+        <feOffset dx="-20" dy="20" result="offsetblur"></feOffset>
+        <feComposite in2="offsetblur" operator="in"></feComposite>
+        <feMerge>
+          <feMergeNode></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
     </defs>
     <g id="webpack" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g transform="translate(87.000000, 90.000000)">
                 <g id="color-/-11-deep-blue" fill="url(#radialGradient-4)" fill-rule="evenodd">
+                    <circle id="shape" filter="url(#drop-shadow)" opacity=".5" cx="72" cy="72" r="72" />
                     <circle id="shape" cx="72" cy="72" r="72" />
                 </g>
             <path d="M74.1046512,47.9299897 L94.6608075,58.913087 L94.8259337,59 L106.197674,52.6078897 L74.1046512,35 L74.1046512,47.9299897 Z M38.8023256,52.6184202 L50.1687496,59 L50.3335813,58.912824 L70.8953488,47.9377226 L70.8953488,35 L38.8023256,52.6184202 Z M53.244186,60.739997 L72.5074807,71.8 L91.755814,60.739997 L72.5074807,50.2 L53.244186,60.739997 Z M38,91 L49.2325581,84.5778103 L49.2325581,61.4224012 L38,55 L38,91 Z M95.7674419,61.4224012 L95.7674419,84.5778103 L107,91 L107,55 L95.7674419,61.4224012 Z M74.1046512,73.9775985 L74.1046512,94.2 L93.3604651,83.7408419 L93.3604651,63 L74.1046512,73.9775985 Z M51.6395349,83.7259986 L70.8953488,94.2 L70.8953488,73.9775985 L51.6395349,63 L51.6395349,83.7259986 Z M74.1046512,97.5119217 L74.1046512,111 L105.395349,93.6561169 L93.6070437,87 L74.1046512,97.5119217 Z M39.6046512,93.6601933 L70.8953488,111 L70.8953488,97.5036612 L51.3929563,87 L39.6046512,93.6601933 Z" id="webpack-logo" fill="#FFFFFF"></path>

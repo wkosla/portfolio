@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="354px" height="354px" viewBox="0 0 354 354" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="filter: drop-shadow(rgba(5, 14, 26, 0.5) -20px 20px 30px);">
+<svg width="354px" height="354px" viewBox="0 0 354 354" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
     <title>ball-2</title>
     <desc>Created with Sketch.</desc>
@@ -8,10 +8,20 @@
             <stop stop-color="#FFFFFF" offset="0%"></stop>
             <stop stop-color="#E6F0FA" offset="100%"></stop>
         </radialGradient>
+      <filter id="drop-shadow" x="-100%" y="-100%" width="350%" height="350%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="30"></feGaussianBlur>
+        <feOffset dx="-20" dy="20" result="offsetblur"></feOffset>
+        <feComposite in2="offsetblur" operator="in"></feComposite>
+        <feMerge>
+          <feMergeNode></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
     </defs>
     <g id="ball-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="element-/-shape-ball" transform="translate(87.000000, 90.000000)">
             <g id="color-/-00-base" fill="url(#radialGradient-4)" fill-rule="evenodd">
+                <circle id="shape" filter="url(#drop-shadow)" opacity=".5" cx="88" cy="88" r="88" />
                 <circle id="shape" cx="88" cy="88" r="88" />
             </g>
         </g>

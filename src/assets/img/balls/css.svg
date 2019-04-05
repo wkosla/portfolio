@@ -8,10 +8,20 @@
             <stop stop-color="#00E1FF" offset="0%"></stop>
             <stop stop-color="#008CFF" offset="100%"></stop>
         </radialGradient>
+      <filter id="drop-shadow" x="-100%" y="-100%" width="350%" height="350%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="30"></feGaussianBlur>
+        <feOffset dx="-20" dy="20" result="offsetblur"></feOffset>
+        <feComposite in2="offsetblur" operator="in"></feComposite>
+        <feMerge>
+          <feMergeNode></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
     </defs>
     <g id="css" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g transform="translate(87.000000, 90.000000)">
             <g id="color-/-01-blue" fill="url(#radialGradient-4)" fill-rule="evenodd">
+              <circle id="shape" filter="url(#drop-shadow)" opacity=".5" cx="72" cy="72" r="72" />
               <circle id="shape" cx="72" cy="72" r="72" />
             </g>
             <polygon id="logo-css" fill="#FFFFFF" points="98.8417924 41 41 41 42.1888432 53.5296527 90.572931 53.5296527 89.0530407 66.2758987 43.3978052 66.2758987 44.5647005 78.5907781 88.4074074 78.5907781 86.7777778 95.6579706 72.4549611 99.1143637 58.5235482 95.6579706 57.7078189 85.5035644 45.2213077 85.5035644 47.1582076 105.939785 73.1005944 113 98.8417924 105.939785 105 41" />
