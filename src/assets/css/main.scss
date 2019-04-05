@@ -218,7 +218,7 @@ a {
 .nav__logo {
   cursor: pointer;
   width: 55px;
-  
+
   .nav__k {
     transition: .2s;
   }
@@ -314,7 +314,7 @@ a {
       &:nth-child(2) {
         opacity: 1;
       }
-    }    
+    }
   }
 }
 
@@ -797,11 +797,11 @@ a {
 }
 
 .works__work {
-  overflow: visible;
   float: right;
   height: 72vw;
   max-height: 290px;
   max-width: 260px;
+  overflow: visible;
   width: 64vw;
 
   &:nth-child(2n + 1) {

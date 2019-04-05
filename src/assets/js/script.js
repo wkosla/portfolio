@@ -167,6 +167,6 @@ navLinks.forEach(link => link.addEventListener('click', () => {
   }
 }));
 
-window.addEventListener('wheel', evt => {
+window.addEventListener('touchmove', evt => {
   if (navOpen) evt.preventDefault();
-});
+}, {passive: false});

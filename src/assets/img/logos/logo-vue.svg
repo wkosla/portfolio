@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="136px" height="118px" viewBox="0 0 136 118" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>logo-vue</title>
+    <desc>Created with Sketch.</desc>
+    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02-03-crop-skills" transform="translate(-609.000000, -937.000000)" fill="#FFFFFF">
+            <g id="about-skills" transform="translate(224.000000, 174.000000)">
+                <g id="balls">
+                    <g id="angular" transform="translate(325.000000, 688.000000)">
+                        <path d="M171.253747,75 L170.640682,76.0683062 L129.840523,147.210335 L128.007703,150.406168 L126.163727,147.216748 L85.0230352,76.0752536 L84.4014703,75 L60,75 L127.999734,193 L196,75 L171.253747,75 Z M143.302675,75 L127.666763,102.547218 L111.692014,75 L89,75 L127.659328,142 L166,75 L143.302675,75 Z" id="logo-vue"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

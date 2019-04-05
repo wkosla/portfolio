@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="321px" height="321px" viewBox="0 0 321 321" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="filter: drop-shadow(rgba(5, 14, 26, 0.5) -20px 20px 30px);">
+<svg width="321px" height="321px" viewBox="0 0 321 321" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
     <title>css</title>
     <desc>Created with Sketch.</desc>
@@ -14,7 +14,7 @@
             <g id="color-/-01-blue" fill="url(#radialGradient-4)" fill-rule="evenodd">
               <circle id="shape" cx="72" cy="72" r="72" />
             </g>
-            <polygon id="logo-html" fill="#FFFFFF" points="98.8417924 41 41 41 42.1888432 53.5296527 90.572931 53.5296527 89.0530407 66.2758987 43.3978052 66.2758987 44.5647005 78.5907781 88.4074074 78.5907781 86.7777778 95.6579706 72.4549611 99.1143637 58.5235482 95.6579706 57.7078189 85.5035644 45.2213077 85.5035644 47.1582076 105.939785 73.1005944 113 98.8417924 105.939785 105 41"></polygon>
+            <polygon id="logo-css" fill="#FFFFFF" points="98.8417924 41 41 41 42.1888432 53.5296527 90.572931 53.5296527 89.0530407 66.2758987 43.3978052 66.2758987 44.5647005 78.5907781 88.4074074 78.5907781 86.7777778 95.6579706 72.4549611 99.1143637 58.5235482 95.6579706 57.7078189 85.5035644 45.2213077 85.5035644 47.1582076 105.939785 73.1005944 113 98.8417924 105.939785 105 41" />
         </g>
     </g>
 </svg>
