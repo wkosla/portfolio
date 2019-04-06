@@ -677,10 +677,10 @@ a {
   position: relative;
 
   &--mobile {
+    left: 0;
     pointer-events: none;
     position: absolute;
     top: 0;
-    left: 0;
 
     @include tablet {
       display: none;
@@ -688,9 +688,8 @@ a {
   }
 
   &--tablet {
-    pointer-events: none;
-
     display: none;
+    pointer-events: none;
 
     @include tablet {
       display: unset;
