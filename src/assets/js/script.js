@@ -170,3 +170,33 @@ navLinks.forEach(link => link.addEventListener('click', () => {
 window.addEventListener('touchmove', evt => {
   if (navOpen) evt.preventDefault();
 }, {passive: false});
+
+const form = document.querySelector('.contact__form'),
+  inputs = Array.from(document.querySelectorAll('.contact__input'))
+
+inputs.forEach(element => {
+  const label = element.previousElementSibling;
+
+  element.addEventListener('focus', () => {
+    label.classList.add('contact__label--hidden');
+  });
+
+  element.addEventListener('blur', () => {
+    if (element.value === '') label.classList.remove('contact__label--hidden');
+  });
+});
+
+form.addEventListener('submit', evt => {
+  evt.preventDefault();
+
+  const req = new XMLHttpRequest();
+  req.open('POST', 'assets/php/form.php', true);
+  req.send(new FormData(form));
+  req.onload = () => {
+    if (req.response === 'Message sent!') {
+      console.log('Się udało!');
+    } else {
+      console.log('Się nie udało!');
+    }
+  }
+});

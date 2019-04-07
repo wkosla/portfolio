@@ -1232,11 +1232,31 @@ a {
   @include laptop {
     margin-right: 0;
     max-width: 480px;
+    width: 100%;
   }
 
   @include desktop {
     margin-left: 90px;
     max-width: 540px;
+  }
+}
+
+.contact__field {
+  position: relative;
+  text-align: left;
+}
+
+.contact__label {
+  color: $dark-secondary;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 2rem;
+  pointer-events: none;
+  position: absolute;
+  top: 16px;
+
+  &--hidden {
+    opacity: 0;
   }
 }
 
@@ -1269,11 +1289,24 @@ a {
   border: 0;
   border-radius: 50%;
   box-shadow: $shadow-blue;
+  cursor: pointer;
   display: flex;
   height: 56px;
   justify-content: center;
   margin: 16px auto 83px;
+  transition: .3s;
   width: 56px;
+
+  &:hover {
+    box-shadow: $shadow-blue-hover;
+    transform: translateY(-5px);
+  }
+
+  &:active {
+    box-shadow: $shadow-blue;
+    transform: none;
+    transition: .1s;
+  }
 
   @include tablet {
     margin-right: 0;

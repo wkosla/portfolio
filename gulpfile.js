@@ -65,15 +65,21 @@ function images() {
     .pipe(gulp.dest('./build/assets/img'));
 }
 
+function php() {
+  return gulp.src('./src/assets/php/**/*.php')
+    .pipe(gulp.dest('./build/assets/php/'));
+}
+
 function watchFiles() {
   gulp.watch('./src/assets/css/**/*', styles);
   gulp.watch('./src/assets/js/**/*', scripts);
   gulp.watch('./src/img/**/*', gulp.series(images, browserSyncReload));
   gulp.watch('./src/**/*.html', gulp.series(html, browserSyncReload));
+  gulp.watch('./src/assets/php/**/*.php', gulp.series(php, browserSyncReload));
 }
 
 const img = gulp.series(images, browserSyncReload);
-const watch = gulp.series(html, styles, scripts, images, gulp.parallel(watchFiles, browserSync));
+const watch = gulp.series(html, styles, scripts, images, php, gulp.parallel(watchFiles, browserSync));
 
 exports.watch = watch;
 exports.images = img;
