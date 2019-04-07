@@ -1279,7 +1279,46 @@ a {
   }
 
   &--textarea {
+    display: block;
     height: 80px;
+  }
+}
+
+.contact__prompt {
+  background-color: $dark-primary;
+  border-radius: 10px;
+  font-family: $text-font;
+  font-size: .8rem;
+  letter-spacing: 1px;
+  line-height: 1.2rem;
+  max-width: 90vw;
+  padding: 7px 10px;
+  pointer-events: none;
+  position: absolute;
+  top: 110%;
+  transition: .2s;
+
+  .prompt__message {
+    position: relative;
+    z-index: 1;
+  }
+
+  &--hidden {
+    opacity: 0;
+  }
+
+  &::before {
+    background-color: inherit;
+    content: '';
+    display: block;
+    height: 25px;
+    position: absolute;
+    transform: translate(10%, -70%) rotate(45deg);
+    width: 25px;
+  }
+
+  @include tablet {
+    max-width: 80%;
   }
 }
 

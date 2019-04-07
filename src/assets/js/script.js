@@ -172,31 +172,52 @@ window.addEventListener('touchmove', evt => {
 }, {passive: false});
 
 const form = document.querySelector('.contact__form'),
-  inputs = Array.from(document.querySelectorAll('.contact__input'))
+  inputs = Array.from(document.querySelectorAll('.contact__input'));
+
+function validate(input, pattern) {
+  const reg = new RegExp(pattern);
+  return reg.test(input);
+}
 
 inputs.forEach(element => {
-  const label = element.previousElementSibling;
+  const label = element.previousElementSibling,
+    prompt = element.nextElementSibling;
 
   element.addEventListener('focus', () => {
     label.classList.add('contact__label--hidden');
+    prompt.classList.add('contact__prompt--hidden');
   });
 
   element.addEventListener('blur', () => {
     if (element.value === '') label.classList.remove('contact__label--hidden');
+    if (!validate(element.value, element.dataset.pattern)) {
+      prompt.classList.remove('contact__prompt--hidden');
+    }
   });
 });
 
 form.addEventListener('submit', evt => {
   evt.preventDefault();
 
+  const valid = inputs.map(input => {
+    if (!validate(input.value, input.dataset.pattern)) {
+      input.nextElementSibling.classList.remove('contact__prompt--hidden');
+      return false;
+    } else {
+      return true;
+    }
+  });
+
+  if (valid.some(el => !el)) return false;
+
   const req = new XMLHttpRequest();
   req.open('POST', 'assets/php/form.php', true);
   req.send(new FormData(form));
   req.onload = () => {
     if (req.response === 'Message sent!') {
-      console.log('Się udało!');
+      // success
     } else {
-      console.log('Się nie udało!');
+      // failure
     }
   }
 });

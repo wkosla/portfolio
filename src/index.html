@@ -262,18 +262,33 @@
     <section class="row row--short contact" id="contact">
       <div class="row__wrap contact__wrap">
         <h1 class="row__header contact__header row__header--nomobile">Contact.</h1>
-        <form class="contact__form" spellcheck="false">
+        <form class="contact__form" spellcheck="false" autocomplete="off">
           <div class="contact__field">
             <label class="contact__label" for="Name">Name</label>
-            <input id="form-name" name="Name" class="contact__input" type="text">
+            <input id="form-name" name="Name" class="contact__input" type="text" data-pattern="^.*[\s].*">
+            <div class="contact__prompt contact__prompt--hidden">
+              <span class="prompt__message">
+                Full first and last names are required.
+              </span>
+            </div>
           </div>
           <div class="contact__field">
             <label class="contact__label" for="Email">E-mail address</label>
-            <input id="form-email" name="Email" class="contact__input" type="email">
+            <input id="form-email" name="Email" class="contact__input" type="email" data-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+            <div class="contact__prompt contact__prompt--hidden">
+              <span class="prompt__message">
+                Correct e-mail address is required.
+              </span>
+            </div>
           </div>
           <div class="contact__field">
             <label class="contact__label" for="Message">Message</label>
-            <textarea id="form-msg" name="Message" class="contact__input contact__input--textarea"></textarea>
+            <textarea id="form-msg" name="Message" class="contact__input contact__input--textarea" data-pattern=".{10,}"></textarea>
+            <div class="contact__prompt contact__prompt--hidden">
+              <span class="prompt__message">
+                Message at least 10 characters long is required.
+              </span>
+            </div>
           </div>
           <button type="submit" class="contact__btn"><img src="assets/img/icon-arrow@3x.svg" alt="Send message"></button>
           <div class="contact__social">
