@@ -1219,6 +1219,7 @@ a {
   background: $light;
   height: 100%;
   padding: 20px 20px 40px;
+  position: relative;
   width: 100%;
 
   @include tablet {
@@ -1297,6 +1298,7 @@ a {
   position: absolute;
   top: 110%;
   transition: .2s;
+  z-index: 100;
 
   .prompt__message {
     position: relative;
@@ -1305,6 +1307,7 @@ a {
 
   &--hidden {
     opacity: 0;
+    transform: translateY(10px);
   }
 
   &::before {
@@ -1349,6 +1352,30 @@ a {
 
   @include tablet {
     margin-right: 0;
+  }
+}
+
+.contact__message {
+  bottom: 100px;
+  color: $dark-primary;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  position: absolute;
+  text-align: left;
+  transition: .3s;
+  width: 50%;
+
+  &--hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  @include tablet {
+    bottom: 160px;
+  }
+
+  @include desktop {
+    bottom: 170px;
   }
 }
 

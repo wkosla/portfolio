@@ -172,7 +172,8 @@ window.addEventListener('touchmove', evt => {
 }, {passive: false});
 
 const form = document.querySelector('.contact__form'),
-  inputs = Array.from(document.querySelectorAll('.contact__input'));
+  inputs = Array.from(document.querySelectorAll('.contact__input')),
+  sentMessage = document.querySelector('.contact__message');
 
 function validate(input, pattern) {
   const reg = new RegExp(pattern);
@@ -214,10 +215,22 @@ form.addEventListener('submit', evt => {
   req.open('POST', 'assets/php/form.php', true);
   req.send(new FormData(form));
   req.onload = () => {
+    const string = req.response === 'Message sent!'
+      ? 'Message sent successfuly! I\'ll get back to you as soon as I can.'
+      : 'Sorry, something went wrong. Please, try again later.';
+
     if (req.response === 'Message sent!') {
-      // success
-    } else {
-      // failure
+      inputs.forEach(input => {
+        input.value = '';
+        input.previousElementSibling.classList.remove('contact__label--hidden');
+      });
     }
-  }
+
+    sentMessage.innerText = string;
+    sentMessage.classList.toggle('contact__message--hidden');
+
+    setTimeout(() => {
+      sentMessage.classList.toggle('contact__message--hidden');
+    }, 5000);
+  };
 });
