@@ -672,39 +672,75 @@ a {
   }
 }
 
-.skills__svg {
+.skills__interactive {
+  display: none;
   overflow: visible;
   position: relative;
 
-  &--mobile {
-    left: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
+  .skills__orb {
 
-    @include tablet {
-      display: none;
+    &::before {
+      display: block;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--sass {
+      &::before {
+        content: url('../img/logos/logo-sass.svg');
+      }
+    }
+
+    &--gulp {
+      &::before {
+        content: url('../img/logos/logo-gulp.svg');
+      }
+    }
+
+    &--git {
+      &::before {
+        content: url('../img/logos/logo-git.svg');
+      }
+    }
+
+    &--html {
+      &::before {
+        content: url('../img/logos/logo-html.svg');
+      }
+    }
+
+    &--js {
+      &::before {
+        content: url('../img/logos/logo-javascript.svg');
+      }
+    }
+
+    &--vue {
+      &::before {
+        content: url('../img/logos/logo-vue.svg');
+        top: calc(50% + 10px);
+      }
+    }
+
+    &--webpack {
+      &::before {
+        content: url('../img/logos/logo-webpack.svg');
+      }
+    }
+
+    &--css {
+      &::before {
+        content: url('../img/logos/logo-css.svg');
+      }
     }
   }
 
-  &--tablet {
-    display: none;
-    pointer-events: none;
-
-    @include tablet {
-      display: unset;
-    }
-    @include laptop {
-      display: none;
-    }
-  }
-
-  &--large {
-    display: none;
-
-    @include laptop {
-      display: unset;
-    }
+  @include laptop {
+    display: block;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -1363,7 +1399,7 @@ a {
   position: absolute;
   text-align: left;
   transition: .3s;
-  width: 50%;
+  width: calc(100% - 40px);
 
   &--hidden {
     opacity: 0;
@@ -1372,6 +1408,7 @@ a {
 
   @include tablet {
     bottom: 160px;
+    width: 50%;
   }
 
   @include desktop {
