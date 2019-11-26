@@ -214,48 +214,44 @@ inputs.forEach(element => {
   });
 });
 
-// form.addEventListener('submit', evt => {
-//   evt.preventDefault();
+form.addEventListener('submit', evt => {
+  evt.preventDefault();
 
-//   const valid = inputs.map(input => {
-//     if (!validate(input.value, input.dataset.pattern)) {
-//       input.nextElementSibling.classList.remove('contact__prompt--hidden');
-//       return false;
-//     } else {
-//       return true;
-//     }
-//   });
+  const valid = inputs.map(input => {
+    if (!validate(input.value, input.dataset.pattern)) {
+      input.nextElementSibling.classList.remove('contact__prompt--hidden');
+      return false;
+    } else {
+      return true;
+    }
+  });
 
-//   if (valid.some(el => !el)) return false;
+  if (valid.some(el => !el)) return false;
 
-//   const req = new XMLHttpRequest();
-//   req.open('POST', form.getAttribute('action'), true);
-//   req.send(new FormData(form));
+  fetch(form.getAttribute('action'), {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
+    body: new URLSearchParams(new FormData(form)).toString()
+  }).then(res => {
+    const string = res.status === 200
+      ? 'Message sent successfuly! I\'ll get back to you as soon as I can.'
+      : 'Sorry, something went wrong. Please, try again later.';
 
-//   fetch(form.getAttribute('action'), {
-//     method: 'POST',
-//     headers: {
-//       'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
-//       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-//     },
-//     body: new URLSearchParams(new FormData(form)).toString()
-//   }).then(res => {
-//     const string = res.status === 200
-//       ? 'Message sent successfuly! I\'ll get back to you as soon as I can.'
-//       : 'Sorry, something went wrong. Please, try again later.';
+    if (res.status === 200) {
+      inputs.forEach(input => {
+        input.value = '';
+        input.previousElementSibling.classList.remove('contact__label--hidden');
+      });
+    }
 
-//     if (res.status === 200) {
-//       inputs.forEach(input => {
-//         input.value = '';
-//         input.previousElementSibling.classList.remove('contact__label--hidden');
-//       });
-//     }
+    sentMessage.innerText = string;
+    sentMessage.classList.toggle('contact__message--hidden');
 
-//     sentMessage.innerText = string;
-//     sentMessage.classList.toggle('contact__message--hidden');
-
-//     setTimeout(() => {
-//       sentMessage.classList.toggle('contact__message--hidden');
-//     }, 5000);
-//   });
-// });
+    setTimeout(() => {
+      sentMessage.classList.toggle('contact__message--hidden');
+    }, 5000);
+  });
+});
