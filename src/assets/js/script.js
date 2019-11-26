@@ -150,7 +150,8 @@ skillOrbsInit();
 const main = document.getElementById('page'),
   nav = document.querySelector('.nav'),
   navBtn = document.querySelector('.nav__btn'),
-  navLinks = document.querySelectorAll('.nav a');
+  navLinks = Array.from(document.querySelectorAll('.nav a')),
+  sections = document.querySelectorAll('.row');
 let navOpen = false;
 
 function navToggle() {
@@ -158,6 +159,11 @@ function navToggle() {
   main.classList.toggle('page--hidden');
   nav.classList.toggle('nav--open');
   navOpen = !navOpen;
+}
+
+function inView(section) {
+  return section.getBoundingClientRect().top < window.innerHeight / 2
+         && section.getBoundingClientRect().bottom > window.innerHeight / 2;
 }
 
 navBtn.addEventListener('click', navToggle);
@@ -170,6 +176,17 @@ navLinks.forEach(link => link.addEventListener('click', () => {
 window.addEventListener('touchmove', evt => {
   if (navOpen) evt.preventDefault();
 }, {passive: false});
+
+window.addEventListener('scroll', evt => {
+  sections.forEach(section => {
+    const sectionLink = navLinks.find(link => link.getAttribute('href').includes(section.getAttribute('id')));
+    if (inView(section)) {      
+      sectionLink.parentElement.classList.add('nav__link--active');
+    } else {
+      sectionLink.parentElement.classList.remove('nav__link--active');
+    }
+  })
+});
 
 const form = document.querySelector('.contact__form'),
   inputs = Array.from(document.querySelectorAll('.contact__input')),
