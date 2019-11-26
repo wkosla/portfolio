@@ -240,15 +240,11 @@ form.addEventListener('submit', evt => {
     },
     body: new URLSearchParams(new FormData(form)).toString()
   }).then(res => {
-    console.log(res);
-
-    return false;
-
-    const string = req.response === 'Message sent!'
+    const string = res.status === 200
       ? 'Message sent successfuly! I\'ll get back to you as soon as I can.'
       : 'Sorry, something went wrong. Please, try again later.';
 
-    if (req.response === 'Message sent!') {
+    if (res.status === 200) {
       inputs.forEach(input => {
         input.value = '';
         input.previousElementSibling.classList.remove('contact__label--hidden');
