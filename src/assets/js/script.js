@@ -214,40 +214,41 @@ inputs.forEach(element => {
   });
 });
 
-form.addEventListener('submit', evt => {
-  evt.preventDefault();
+// form.addEventListener('submit', evt => {
 
-  const valid = inputs.map(input => {
-    if (!validate(input.value, input.dataset.pattern)) {
-      input.nextElementSibling.classList.remove('contact__prompt--hidden');
-      return false;
-    } else {
-      return true;
-    }
-  });
+//   evt.preventDefault();
 
-  if (valid.some(el => !el)) return false;
+//   const valid = inputs.map(input => {
+//     if (!validate(input.value, input.dataset.pattern)) {
+//       input.nextElementSibling.classList.remove('contact__prompt--hidden');
+//       return false;
+//     } else {
+//       return true;
+//     }
+//   });
 
-  const req = new XMLHttpRequest();
-  req.open('POST', 'assets/php/form.php', true);
-  req.send(new FormData(form));
-  req.onload = () => {
-    const string = req.response === 'Message sent!'
-      ? 'Message sent successfuly! I\'ll get back to you as soon as I can.'
-      : 'Sorry, something went wrong. Please, try again later.';
+//   if (valid.some(el => !el)) return false;
 
-    if (req.response === 'Message sent!') {
-      inputs.forEach(input => {
-        input.value = '';
-        input.previousElementSibling.classList.remove('contact__label--hidden');
-      });
-    }
+//   const req = new XMLHttpRequest();
+//   req.open('POST', 'assets/php/form.php', true);
+//   req.send(new FormData(form));
+//   req.onload = () => {
+//     const string = req.response === 'Message sent!'
+//       ? 'Message sent successfuly! I\'ll get back to you as soon as I can.'
+//       : 'Sorry, something went wrong. Please, try again later.';
 
-    sentMessage.innerText = string;
-    sentMessage.classList.toggle('contact__message--hidden');
+//     if (req.response === 'Message sent!') {
+//       inputs.forEach(input => {
+//         input.value = '';
+//         input.previousElementSibling.classList.remove('contact__label--hidden');
+//       });
+//     }
 
-    setTimeout(() => {
-      sentMessage.classList.toggle('contact__message--hidden');
-    }, 5000);
-  };
-});
+//     sentMessage.innerText = string;
+//     sentMessage.classList.toggle('contact__message--hidden');
+
+//     setTimeout(() => {
+//       sentMessage.classList.toggle('contact__message--hidden');
+//     }, 5000);
+//   };
+// });
