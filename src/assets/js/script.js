@@ -231,7 +231,19 @@ form.addEventListener('submit', evt => {
   const req = new XMLHttpRequest();
   req.open('POST', form.getAttribute('action'), true);
   req.send(new FormData(form));
-  req.onload = () => {
+
+  fetch(form.getAttribute('action'), {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
+    body: new FormData(form)
+  }).then(res => {
+    console.log(res);
+
+    return false;
+
     const string = req.response === 'Message sent!'
       ? 'Message sent successfuly! I\'ll get back to you as soon as I can.'
       : 'Sorry, something went wrong. Please, try again later.';
@@ -249,5 +261,5 @@ form.addEventListener('submit', evt => {
     setTimeout(() => {
       sentMessage.classList.toggle('contact__message--hidden');
     }, 5000);
-  };
+  });
 });
