@@ -238,7 +238,7 @@ form.addEventListener('submit', evt => {
       'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
     },
-    body: new FormData(form)
+    body: new URLSearchParams(new FormData(form)).toString()
   }).then(res => {
     console.log(res);
 
