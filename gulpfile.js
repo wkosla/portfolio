@@ -80,6 +80,8 @@ function watchFiles() {
 
 const img = gulp.series(images, browserSyncReload);
 const watch = gulp.series(html, styles, scripts, images, php, gulp.parallel(watchFiles, browserSync));
+const build = gulp.series(html, styles, scripts, images, php);
 
 exports.watch = watch;
 exports.images = img;
+exports.build = build;
